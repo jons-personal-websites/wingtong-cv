@@ -97,11 +97,11 @@ IMPORTANT GUIDELINES:
     particles.push({
       x: Math.random() * 1400,
       y: Math.random() * 900,
-      r: Math.random() * 2.5 + 0.8,
+      r: Math.random() * 3 + 1.2,
       vx: (Math.random() - 0.5) * 0.3,
       vy: (Math.random() - 0.5) * 0.2,
       color: Math.random() > 0.7 ? GOLD : BLUE,
-      alpha: Math.random() * 0.15 + 0.05,
+      alpha: Math.random() * 0.25 + 0.15,
     });
   }
 
@@ -114,7 +114,7 @@ IMPORTANT GUIDELINES:
       r: Math.random() * 40 + 20,
       vx: (Math.random() - 0.5) * 0.15,
       vy: (Math.random() - 0.5) * 0.1,
-      alpha: Math.random() * 0.06 + 0.02,
+      alpha: Math.random() * 0.1 + 0.06,
       rotation: Math.random() * Math.PI * 2,
       rotationSpeed: (Math.random() - 0.5) * 0.005,
     });
@@ -130,9 +130,9 @@ IMPORTANT GUIDELINES:
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 120) {
-          const a = (1 - dist / 120) * 0.04;
+          const a = (1 - dist / 120) * 0.12;
           ctx.strokeStyle = `rgba(${BLUE[0]},${BLUE[1]},${BLUE[2]},${a})`;
-          ctx.lineWidth = 0.5;
+          ctx.lineWidth = 0.8;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
@@ -168,7 +168,7 @@ IMPORTANT GUIDELINES:
       ctx.translate(ring.x, ring.y);
       ctx.rotate(ring.rotation);
       ctx.strokeStyle = `rgba(${BLUE[0]},${BLUE[1]},${BLUE[2]},${ring.alpha})`;
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 1.5;
       ctx.beginPath();
       ctx.arc(0, 0, ring.r, 0, Math.PI * 2);
       ctx.stroke();
