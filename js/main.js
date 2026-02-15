@@ -77,8 +77,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Hero entrance
 gsap.set('.hero-child', { y: 30, opacity: 0 });
-gsap.set('#heroVisual', { scale: 0.9, opacity: 0 });
-gsap.set('#scrollIndicator', { y: 20, opacity: 0 });
 
 const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 heroTl
@@ -87,17 +85,7 @@ heroTl
     opacity: 1,
     duration: 0.8,
     stagger: 0.15,
-  })
-  .to('#heroVisual', {
-    scale: 1,
-    opacity: 1,
-    duration: 1,
-  }, '-=0.6')
-  .to('#scrollIndicator', {
-    y: 0,
-    opacity: 1,
-    duration: 0.6,
-  }, '-=0.4');
+  });
 
 // Scroll-triggered reveal
 gsap.utils.toArray('.gsap-reveal').forEach((el) => {
@@ -135,7 +123,7 @@ document.querySelectorAll('.flavor-tcg, .flavor-a5tec, .flavor-ey, .flavor-adelp
   const colors = {
     'flavor-tcg': 'rgba(108, 92, 231, 0.08)',
     'flavor-a5tec': 'rgba(225, 112, 85, 0.08)',
-    'flavor-ey': 'rgba(242, 201, 76, 0.08)',
+    'flavor-ey': 'rgba(212, 160, 23, 0.06)',
     'flavor-adelphi': 'rgba(9, 132, 227, 0.08)',
     'flavor-comwerks': 'rgba(0, 184, 148, 0.08)',
   };
@@ -225,22 +213,22 @@ function renderProjectHTML(p) {
   // Header
   html += `<div class="h-1 w-20 rounded-full mb-8" style="background:${p.color}"></div>`;
   html += `<p class="text-xs font-mono font-medium tracking-[0.15em] uppercase mb-3" style="color:${p.color}">${p.label}</p>`;
-  html += `<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-3">${p.title}</h2>`;
-  html += `<p class="text-sm text-text-faint mb-8">${p.subtitle}</p>`;
+  html += `<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-3">${p.title}</h2>`;
+  html += `<p class="text-sm text-[#999] mb-8">${p.subtitle}</p>`;
 
   html += '<div class="prose max-w-none">';
 
   // Sections
   for (const sec of p.sections) {
-    html += `<h3 class="font-display text-xl font-semibold text-text mt-10 mb-3">${sec.heading}</h3>`;
+    html += `<h3 class="font-display text-xl font-semibold text-[#1A1A1A] mt-10 mb-3">${sec.heading}</h3>`;
 
     if (sec.text) {
-      html += `<p class="text-[0.95rem] text-text-dim leading-relaxed mb-6">${sec.text}</p>`;
+      html += `<p class="text-[0.95rem] text-[#5A5A5A] leading-relaxed mb-6">${sec.text}</p>`;
     }
 
     if (sec.items) {
       for (const item of sec.items) {
-        html += `<p class="text-[0.95rem] text-text-dim leading-relaxed mb-4"><strong class="text-text">${item.bold}</strong> ${item.text}</p>`;
+        html += `<p class="text-[0.95rem] text-[#5A5A5A] leading-relaxed mb-4"><strong class="text-[#1A1A1A]">${item.bold}</strong> ${item.text}</p>`;
       }
     }
 
@@ -248,7 +236,7 @@ function renderProjectHTML(p) {
       const cols = sec.images.length === 1 ? 1 : sec.images.length === 2 ? 2 : sec.images.length >= 4 ? 2 : 3;
       html += `<div class="modal-grid grid gap-4 mt-6 mb-6" style="grid-template-columns:repeat(${cols},1fr)">`;
       for (const img of sec.images) {
-        html += `<div class="rounded-xl overflow-hidden border border-stroke bg-bg-elevated aspect-[4/3] cursor-zoom-in" onclick="openLightbox('${img.src}','${img.alt.replace(/'/g, "\\'")}')"><img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy"></div>`;
+        html += `<div class="rounded-xl overflow-hidden border border-[#E5E4E1] bg-[#F2F1EE] aspect-[4/3] cursor-zoom-in" onclick="openLightbox('${img.src}','${img.alt.replace(/'/g, "\\'")}')"><img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy"></div>`;
       }
       html += '</div>';
     }
@@ -256,14 +244,14 @@ function renderProjectHTML(p) {
 
   // Metrics
   if (p.metrics && p.metrics.length) {
-    html += '<h3 class="font-display text-xl font-semibold text-text mt-10 mb-3">Outcomes</h3>';
+    html += '<h3 class="font-display text-xl font-semibold text-[#1A1A1A] mt-10 mb-3">Outcomes</h3>';
     const metricCols = p.metrics.length <= 2 ? p.metrics.length : 3;
     html += `<div class="modal-grid grid gap-4 mt-6" style="grid-template-columns:repeat(${metricCols},1fr)">`;
     for (const m of p.metrics) {
       const fontSize = m.small ? 'text-2xl' : 'text-3xl';
-      html += `<div class="rounded-xl p-5 text-center" style="background:${p.color}15;border:1px solid ${p.color}33">`;
+      html += `<div class="rounded-xl p-5 text-center" style="background:${p.color}0A;border:1px solid ${p.color}20">`;
       html += `<div class="font-display ${fontSize} font-bold mb-1" style="color:${p.color}">${m.value}</div>`;
-      html += `<div class="text-xs text-text-faint">${m.label}</div></div>`;
+      html += `<div class="text-xs text-[#999]">${m.label}</div></div>`;
     }
     html += '</div>';
   }
@@ -415,13 +403,13 @@ function toggleChat() {
   if (chatOpen) {
     panel.classList.remove('opacity-0', 'translate-y-5', 'scale-95', 'pointer-events-none');
     panel.classList.add('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
-    fab.classList.add('bg-bg-elevated', 'text-accent');
+    fab.classList.add('bg-bg-surface', 'text-accent', 'border', 'border-stroke');
     fab.classList.remove('bg-accent', 'text-white');
     setTimeout(() => document.getElementById('chatInput').focus(), 350);
   } else {
     panel.classList.add('opacity-0', 'translate-y-5', 'scale-95', 'pointer-events-none');
     panel.classList.remove('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
-    fab.classList.remove('bg-bg-elevated', 'text-accent');
+    fab.classList.remove('bg-bg-surface', 'text-accent', 'border', 'border-stroke');
     fab.classList.add('bg-accent', 'text-white');
   }
 }

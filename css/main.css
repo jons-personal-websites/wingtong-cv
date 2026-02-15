@@ -2,24 +2,13 @@
 html { scroll-behavior: smooth; }
 body { -webkit-font-smoothing: antialiased; }
 
-::selection { background: rgba(255, 99, 71, 0.3); color: #fff; }
+::selection { background: rgba(0, 115, 206, 0.15); color: #1A1A1A; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0B0B0B; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #555; }
-
-/* Subtle grain overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-}
+::-webkit-scrollbar-track { background: #FAF9F7; }
+::-webkit-scrollbar-thumb { background: #D4D3D0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #B0AFAC; }
 
 /* ====== NAVIGATION ====== */
 .nav-link { position: relative; }
@@ -30,7 +19,7 @@ body::before {
   left: 0;
   width: 0;
   height: 1.5px;
-  background: #FF6347;
+  background: #0073CE;
   transition: width 0.3s ease;
 }
 .nav-link:hover::after { width: 100%; }
@@ -61,8 +50,8 @@ body::before {
 .flavor-tcg .exp-list li::before { background: #6C5CE7; }
 .flavor-a5tec .exp-accent { background: #E17055; }
 .flavor-a5tec .exp-list li::before { background: #E17055; }
-.flavor-ey .exp-accent { background: #F2C94C; }
-.flavor-ey .exp-list li::before { background: #F2C94C; }
+.flavor-ey .exp-accent { background: #D4A017; }
+.flavor-ey .exp-list li::before { background: #D4A017; }
 .flavor-adelphi .exp-accent { background: #0984E3; }
 .flavor-adelphi .exp-list li::before { background: #0984E3; }
 .flavor-comwerks .exp-accent { background: #00B894; }
@@ -94,7 +83,7 @@ body::before {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(108, 92, 231, 0.08), transparent 70%);
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.06), transparent 70%);
   pointer-events: none;
 }
 
@@ -106,7 +95,7 @@ body::before {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(225, 112, 85, 0.08), transparent 70%);
+  background: radial-gradient(circle, rgba(225, 112, 85, 0.06), transparent 70%);
   pointer-events: none;
 }
 
@@ -121,8 +110,8 @@ body::before {
     90deg,
     transparent,
     transparent 80px,
-    rgba(242, 201, 76, 0.03) 80px,
-    rgba(242, 201, 76, 0.03) 81px
+    rgba(212, 160, 23, 0.03) 80px,
+    rgba(212, 160, 23, 0.03) 81px
   );
   pointer-events: none;
 }
@@ -137,8 +126,8 @@ body::before {
   background: linear-gradient(
     135deg,
     transparent 45%,
-    rgba(9, 132, 227, 0.06) 45%,
-    rgba(9, 132, 227, 0.06) 55%,
+    rgba(9, 132, 227, 0.04) 45%,
+    rgba(9, 132, 227, 0.04) 55%,
     transparent 55%
   );
   pointer-events: none;
@@ -153,7 +142,7 @@ body::before {
   height: 200px;
   background: radial-gradient(
     circle at 30% 30%,
-    rgba(0, 184, 148, 0.08) 2px,
+    rgba(0, 184, 148, 0.06) 2px,
     transparent 2px
   );
   background-size: 20px 20px;
@@ -172,7 +161,7 @@ body::before {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #FF6347, #F2C94C);
+  background: linear-gradient(90deg, #0073CE, #FFD93D);
 }
 
 .edu-card {
@@ -181,12 +170,12 @@ body::before {
 
 .edu-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border-color: #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-color: #D4D3D0;
 }
 
 .edu-card:hover::before {
-  background: linear-gradient(90deg, #FF6347, #F2C94C, #FF6347);
+  background: linear-gradient(90deg, #0073CE, #FFD93D, #0073CE);
   background-size: 200% 100%;
   animation: shimmerBar 1.5s ease infinite;
 }
@@ -210,11 +199,11 @@ body::before {
 
 .metric-callout:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .metric-callout .metric-number {
-  font-family: "Syne", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1;
@@ -234,7 +223,7 @@ body::before {
   left: 50%;
   width: 2px;
   height: 0;
-  background: rgba(255, 99, 71, 0.4);
+  background: rgba(0, 115, 206, 0.4);
   border-radius: 2px;
   opacity: 0;
   transition: height 0.4s ease, opacity 0.4s ease;
@@ -273,7 +262,7 @@ body::before {
 }
 .expand-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(255, 99, 71, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 115, 206, 0.15);
 }
 
 /* ====== PORTFOLIO CARDS ====== */
@@ -281,9 +270,9 @@ body::before {
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .project-card:hover {
-  border-color: rgba(255, 99, 71, 0.25);
+  border-color: rgba(0, 115, 206, 0.2);
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* ====== FOOTER ====== */
@@ -298,16 +287,6 @@ footer:hover svg {
 #projectModal { transition: opacity 0.3s ease; }
 #projectModalContent { transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
 
-/* ====== PHOTO RING ====== */
-.photo-ring {
-  animation: ringPulse 3s ease-in-out infinite;
-}
-
-@keyframes ringPulse {
-  0%, 100% { opacity: 0.3; box-shadow: 0 0 0 0 rgba(255, 99, 71, 0); }
-  50% { opacity: 0.7; box-shadow: 0 0 30px 5px rgba(255, 99, 71, 0.1); }
-}
-
 /* ====== SECTION NUMBER LABELS ====== */
 .section-label {
   font-family: "JetBrains Mono", monospace;
@@ -318,7 +297,7 @@ footer:hover svg {
 
 /* ====== FIT ASSESSMENT INPUT ====== */
 #fitTextarea:focus {
-  box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.15), 0 0 30px rgba(255, 99, 71, 0.08);
+  box-shadow: 0 0 0 3px rgba(0, 115, 206, 0.12), 0 0 30px rgba(0, 115, 206, 0.06);
 }
 
 /* ====== ABOUT SPECIALTY CARDS ====== */
@@ -327,8 +306,8 @@ footer:hover svg {
 }
 .specialty-card:hover {
   transform: translateY(-4px);
-  border-color: #333;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: #D4D3D0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 /* ====== PROJECT MODAL IMAGE GRIDS ====== */
@@ -342,6 +321,25 @@ footer:hover svg {
 }
 .cert-pill:hover {
   transform: translateY(-2px);
-  border-color: #FF6347;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: #0073CE;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ====== HERO ICON SPARKLE ====== */
+.icon-sparkle {
+  position: relative;
+}
+.icon-sparkle::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  background: radial-gradient(circle, rgba(255, 217, 61, 0.4) 0%, rgba(255, 217, 61, 0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: sparkleGlow 3s ease-in-out infinite;
+}
+
+@keyframes sparkleGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
 }

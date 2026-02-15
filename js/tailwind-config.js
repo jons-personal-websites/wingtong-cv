@@ -2,19 +2,21 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        bg: { DEFAULT: "#0B0B0B", surface: "#141414", elevated: "#1C1C1C", hover: "#242424" },
-        text: { DEFAULT: "#EDEBE8", dim: "#8A8580", faint: "#5A5550" },
-        accent: { DEFAULT: "#FF6347", muted: "#CC4F38", pale: "rgba(255,99,71,0.08)" },
-        stroke: { DEFAULT: "#262626", light: "#333333" },
-        tcg: { DEFAULT: "#6C5CE7", bg: "#13112A" },
-        a5tec: { DEFAULT: "#E17055", bg: "#1F1410" },
-        ey: { DEFAULT: "#F2C94C", bg: "#1A180F" },
-        adelphi: { DEFAULT: "#0984E3", bg: "#0C1520" },
-        comwerks: { DEFAULT: "#00B894", bg: "#0C1A15" },
+        bg: { DEFAULT: "#FAF9F7", surface: "#F2F1EE", elevated: "#FFFFFF", hover: "#EEEDEA" },
+        text: { DEFAULT: "#1A1A1A", dim: "#5A5A5A", faint: "#999999" },
+        accent: { DEFAULT: "#0073CE", muted: "#005FA8", pale: "rgba(0,115,206,0.06)" },
+        gold: { DEFAULT: "#FFD93D", muted: "#E6C235" },
+        stroke: { DEFAULT: "#E5E4E1", light: "#ECECEC" },
+        tcg: { DEFAULT: "#6C5CE7", bg: "#F5F3FF" },
+        a5tec: { DEFAULT: "#E17055", bg: "#FFF5F2" },
+        ey: { DEFAULT: "#D4A017", bg: "#FFFBEB" },
+        adelphi: { DEFAULT: "#0984E3", bg: "#EFF8FF" },
+        comwerks: { DEFAULT: "#00B894", bg: "#ECFDF5" },
       },
       fontFamily: {
-        display: ['"Syne"', "sans-serif"],
-        body: ['"Manrope"', "sans-serif"],
+        display: ['"DM Sans"', "sans-serif"],
+        serif: ['"Playfair Display"', "serif"],
+        body: ['"DM Sans"', "sans-serif"],
         mono: ['"JetBrains Mono"', "monospace"],
       },
       animation: {
