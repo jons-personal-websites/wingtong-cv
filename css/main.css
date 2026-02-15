@@ -328,18 +328,38 @@ footer:hover svg {
 /* ====== HERO ICON SPARKLE ====== */
 .icon-sparkle {
   position: relative;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+.icon-sparkle:hover {
+  transform: rotate(8deg) scale(1.1) !important;
 }
 .icon-sparkle::before {
   content: "";
   position: absolute;
   inset: -12px;
-  background: radial-gradient(circle, rgba(255, 217, 61, 0.4) 0%, rgba(255, 217, 61, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 217, 61, 0.35) 0%, rgba(255, 217, 61, 0) 70%);
   border-radius: 50%;
   z-index: -1;
   animation: sparkleGlow 3s ease-in-out infinite;
 }
+.icon-sparkle::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(0, 115, 206, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -2;
+  animation: sparkleGlow 3s ease-in-out infinite 1.5s;
+}
 
 @keyframes sparkleGlow {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.1); }
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.15); }
+}
+
+/* ====== HERO BACKGROUND SHAPES ====== */
+.hero-bg-shape {
+  filter: blur(60px);
+  will-change: transform;
 }

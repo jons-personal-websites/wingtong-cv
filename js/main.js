@@ -75,17 +75,73 @@ IMPORTANT GUIDELINES:
 // ====== GSAP ANIMATIONS ======
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero entrance
-gsap.set('.hero-child', { y: 30, opacity: 0 });
+// Hero entrance — orchestrated reveal
+gsap.set('.hero-line-inner', { y: '110%' });
+gsap.set('#heroIcon', { scale: 0, opacity: 0, rotation: -20 });
+gsap.set('#heroUnderline', { scaleX: 0 });
+gsap.set('.hero-cta', { y: 30, opacity: 0 });
+gsap.set('.hero-bg-shape', { scale: 0, opacity: 0 });
 
 const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 heroTl
-  .to('.hero-child', {
+  // Background shapes drift in
+  .to('.hero-bg-shape', {
+    scale: 1,
+    opacity: 1,
+    duration: 1.5,
+    stagger: 0.2,
+    ease: 'power2.out',
+  })
+  // Line 1: "Hi! I'm Wing Tong" slides up from clip
+  .to('.hero-line-inner', {
+    y: '0%',
+    duration: 0.9,
+    stagger: 0.2,
+    ease: 'power4.out',
+  }, 0.3)
+  // Face icon pops in with spring
+  .to('#heroIcon', {
+    scale: 1,
+    opacity: 1,
+    rotation: 0,
+    duration: 0.7,
+    ease: 'back.out(2.5)',
+  }, 0.7)
+  // Underline sweeps across "Product Designer"
+  .to('#heroUnderline', {
+    scaleX: 1,
+    duration: 0.6,
+    ease: 'power2.inOut',
+  }, 1.1)
+  // CTA buttons rise up
+  .to('.hero-cta', {
     y: 0,
     opacity: 1,
-    duration: 0.8,
-    stagger: 0.15,
+    duration: 0.7,
+    ease: 'power3.out',
+  }, 1.2);
+
+// Floating background shapes — continuous gentle drift
+gsap.utils.toArray('.hero-bg-shape').forEach((shape, i) => {
+  gsap.to(shape, {
+    y: `${15 + i * 5}`,
+    x: `${10 - i * 8}`,
+    duration: 4 + i * 1.5,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut',
   });
+});
+
+// Face icon — subtle continuous float
+gsap.to('#heroIcon', {
+  y: -6,
+  duration: 2,
+  repeat: -1,
+  yoyo: true,
+  ease: 'sine.inOut',
+  delay: 1.5,
+});
 
 // Scroll-triggered reveal
 gsap.utils.toArray('.gsap-reveal').forEach((el) => {
