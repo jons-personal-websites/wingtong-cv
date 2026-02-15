@@ -1,6 +1,389 @@
+/* Only custom CSS that Tailwind can't handle */
 html {
   scroll-behavior: smooth;
 }
 body {
   -webkit-font-smoothing: antialiased;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Nav link underline on hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: #0052A3;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Experience accent bars */
+.exp-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Experience bullet dots */
+.exp-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Flavor colors */
+.flavor-tcg .exp-accent {
+  background: #6C5CE7;
+}
+.flavor-tcg .exp-list li::before {
+  background: #6C5CE7;
+}
+.flavor-a5tec .exp-accent {
+  background: #E17055;
+}
+.flavor-a5tec .exp-list li::before {
+  background: #E17055;
+}
+.flavor-ey .exp-accent {
+  background: #2D3436;
+}
+.flavor-ey .exp-list li::before {
+  background: #2D3436;
+}
+.flavor-adelphi .exp-accent {
+  background: #0984E3;
+}
+.flavor-adelphi .exp-list li::before {
+  background: #0984E3;
+}
+.flavor-comwerks .exp-accent {
+  background: #00B894;
+}
+.flavor-comwerks .exp-list li::before {
+  background: #00B894;
+}
+
+/* Loading dots animation delay */
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Education card top accent */
+.edu-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0052A3, #C4A882);
+}
+
+/* Fit section glow */
+.fit-glow::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 82, 163, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+/* Decorative background accents per role */
+.flavor-tcg::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.flavor-a5tec::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(225, 112, 85, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.flavor-ey::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(45, 52, 54, 0.056) 60px,
+      rgba(45, 52, 54, 0.056) 61px
+    );
+  pointer-events: none;
+}
+
+.flavor-adelphi::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: 5%;
+  width: 200px;
+  height: 400px;
+  background: linear-gradient(
+    135deg,
+    transparent 45%,
+    rgba(9, 132, 227, 0.1) 45%,
+    rgba(9, 132, 227, 0.1) 55%,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.flavor-comwerks::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(0, 184, 148, 0.12) 2px,
+    transparent 2px
+  );
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+/* Key metric callout cards */
+.metric-callout {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid;
+  margin-bottom: 1.25rem;
+}
+
+.metric-callout .metric-number {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.metric-callout .metric-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* Chat FAB pen-drawing Easter egg */
+#chatFab::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 2px;
+  height: 0;
+  background: rgba(0, 82, 163, 0.3);
+  border-radius: 2px;
+  opacity: 0;
+  transition: height 0.4s ease, opacity 0.4s ease;
+  transform: translateX(-50%);
+}
+
+#chatFab:hover::before {
+  height: 20px;
+  opacity: 1;
+  animation: penDraw 1.5s ease-in-out infinite;
+}
+
+@keyframes penDraw {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px) rotate(5deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-20px) rotate(-5deg);
+    opacity: 0;
+  }
+}
+
+/* ====== SECTION HOVER MICRO-INTERACTIONS ====== */
+
+/* Experience role blocks: accent bar widens + bg accent intensifies on hover */
+.flavor-tcg,
+.flavor-a5tec,
+.flavor-ey,
+.flavor-adelphi,
+.flavor-comwerks {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.flavor-tcg:hover .exp-accent,
+.flavor-a5tec:hover .exp-accent,
+.flavor-ey:hover .exp-accent,
+.flavor-adelphi:hover .exp-accent,
+.flavor-comwerks:hover .exp-accent {
+  width: 6px;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp-accent {
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Icon badge pulse on role hover */
+.flavor-tcg:hover .bg-tcg\/\[0\.08\],
+.flavor-a5tec:hover .bg-a5tec\/\[0\.08\],
+.flavor-ey:hover .bg-ey\/\[0\.08\],
+.flavor-adelphi:hover .bg-adelphi\/\[0\.08\],
+.flavor-comwerks:hover .bg-comwerks\/\[0\.08\] {
+  animation: iconPulse 0.6s ease-out;
+}
+
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Metric callout number scale on hover */
+.metric-callout {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-callout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.metric-callout:hover .metric-number {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1.1);
+}
+
+.metric-callout .metric-number {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Stats bar individual stat hover */
+#statsBar > div {
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+#statsBar > div:hover {
+  transform: translateY(-3px);
+}
+
+#statsBar > div:hover .stat-counter {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), letter-spacing 0.3s ease;
+  transform: scale(1.08);
+}
+
+.stat-counter {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Education cards: shimmer accent bar on hover */
+.edu-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.edu-card:hover::before {
+  background: linear-gradient(90deg, #0052A3, #C4A882, #0052A3);
+  background-size: 200% 100%;
+  animation: shimmerBar 1.5s ease infinite;
+}
+
+@keyframes shimmerBar {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Market tags: stagger ripple on hover within container */
+.market-tag {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Fit assessment textarea glow on focus */
+#fitTextarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1), 0 0 30px rgba(0, 82, 163, 0.05);
+}
+
+/* Expand/Learn more button hover polish */
+.expand-btn {
+  transition: all 0.25s ease;
+}
+
+.expand-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.15);
+}
+
+/* Footer icon hover */
+footer svg {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+footer:hover svg {
+  transform: rotate(15deg) scale(1.15);
+}
+
+/* Portfolio grid cards */
+#portfolio .grid > div {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Project modal transitions */
+#projectModal {
+  transition: opacity 0.3s ease;
+}
+#projectModalContent {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
