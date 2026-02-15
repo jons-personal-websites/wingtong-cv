@@ -14,8 +14,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -31,41 +30,41 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="font-body text-ink bg-cream leading-relaxed overflow-x-hidden">
+<body class="font-body text-text bg-bg leading-relaxed overflow-x-hidden">
 
   <!-- ==================== NAVIGATION ==================== -->
-  <nav id="nav" class="fixed top-0 left-0 right-0 z-[1000] bg-cream/85 backdrop-blur-xl border-b border-transparent transition-all duration-400 h-[72px]">
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-[1000] bg-bg/90 backdrop-blur-xl border-b border-transparent transition-all duration-300 h-16">
     <div class="max-w-[1200px] mx-auto px-8 h-full flex items-center justify-between">
-      <a href="#" class="font-display text-2xl font-semibold text-ink no-underline tracking-tight">Wing Tong</a>
+      <a href="#" class="font-display text-xl font-bold text-text tracking-tight no-underline">WT<span class="text-accent">.</span></a>
 
       <ul id="navLinks" class="hidden md:flex items-center gap-8 list-none">
-        <li><a href="#about" class="nav-link relative text-sm font-medium text-ink-light no-underline tracking-wide transition-colors hover:text-accent">About</a></li>
-        <li><a href="#portfolio" class="nav-link relative text-sm font-medium text-ink-light no-underline tracking-wide transition-colors hover:text-accent">Portfolio</a></li>
-        <li><a href="#experience" class="nav-link relative text-sm font-medium text-ink-light no-underline tracking-wide transition-colors hover:text-accent">Experience</a></li>
-        <li><a href="#education" class="nav-link relative text-sm font-medium text-ink-light no-underline tracking-wide transition-colors hover:text-accent">Education</a></li>
+        <li><a href="#about" class="nav-link text-xs font-mono font-medium text-text-dim tracking-wider uppercase no-underline transition-colors hover:text-accent">About</a></li>
+        <li><a href="#portfolio" class="nav-link text-xs font-mono font-medium text-text-dim tracking-wider uppercase no-underline transition-colors hover:text-accent">Work</a></li>
+        <li><a href="#experience" class="nav-link text-xs font-mono font-medium text-text-dim tracking-wider uppercase no-underline transition-colors hover:text-accent">Experience</a></li>
+        <li><a href="#education" class="nav-link text-xs font-mono font-medium text-text-dim tracking-wider uppercase no-underline transition-colors hover:text-accent">Education</a></li>
         <li>
-          <a href="#" class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-ink text-cream text-xs font-semibold tracking-wider rounded-full border-none cursor-pointer transition-all duration-300 hover:bg-accent hover:-translate-y-0.5 hover:shadow-lg no-underline">
+          <a href="#" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-accent text-white text-xs font-mono font-semibold tracking-wider uppercase rounded-full border-none cursor-pointer transition-all duration-300 hover:bg-accent-muted hover:-translate-y-0.5 hover:shadow-lg no-underline">
             <i data-lucide="download" class="w-3.5 h-3.5"></i>
-            Download CV
+            CV
           </a>
         </li>
       </ul>
 
       <button id="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation menu" class="flex md:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1">
-        <span class="block w-6 h-0.5 bg-ink rounded transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-ink rounded transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-ink rounded transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-text rounded transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-text rounded transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-text rounded transition-all duration-300"></span>
       </button>
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden absolute top-[72px] left-0 right-0 bg-cream/[0.98] backdrop-blur-xl border-b border-border-custom">
+    <div id="mobileMenu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-bg/[0.98] backdrop-blur-xl border-b border-stroke">
       <div class="flex flex-col gap-4 px-8 py-6">
-        <a href="#about" onclick="closeMobileNav()" class="text-sm font-medium text-ink-light no-underline hover:text-accent">About</a>
-        <a href="#portfolio" onclick="closeMobileNav()" class="text-sm font-medium text-ink-light no-underline hover:text-accent">Portfolio</a>
-        <a href="#experience" onclick="closeMobileNav()" class="text-sm font-medium text-ink-light no-underline hover:text-accent">Experience</a>
-        <a href="#education" onclick="closeMobileNav()" class="text-sm font-medium text-ink-light no-underline hover:text-accent">Education</a>
-        <a href="#" onclick="closeMobileNav()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-ink text-cream text-xs font-semibold tracking-wider rounded-full border-none cursor-pointer w-fit no-underline">
+        <a href="#about" onclick="closeMobileNav()" class="text-sm font-mono text-text-dim no-underline hover:text-accent">About</a>
+        <a href="#portfolio" onclick="closeMobileNav()" class="text-sm font-mono text-text-dim no-underline hover:text-accent">Work</a>
+        <a href="#experience" onclick="closeMobileNav()" class="text-sm font-mono text-text-dim no-underline hover:text-accent">Experience</a>
+        <a href="#education" onclick="closeMobileNav()" class="text-sm font-mono text-text-dim no-underline hover:text-accent">Education</a>
+        <a href="#" onclick="closeMobileNav()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-xs font-mono font-semibold tracking-wider uppercase rounded-full border-none cursor-pointer w-fit no-underline">
           <i data-lucide="download" class="w-3.5 h-3.5"></i>
           Download CV
         </a>
@@ -74,126 +73,136 @@
   </nav>
 
   <!-- ==================== HERO ==================== -->
-  <section class="min-h-screen flex items-center pt-[calc(72px+2rem)] px-8 pb-16 relative overflow-hidden">
-    <!-- Morphing background shape -->
-    <div class="absolute -right-[5%] top-[10%] w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] bg-gradient-to-br from-accent-pale via-sand-light to-cream-dark opacity-50 animate-morph z-0"></div>
+  <section class="min-h-screen flex items-center pt-20 px-8 pb-16 relative overflow-hidden">
+    <!-- Ambient glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,99,71,0.05),transparent_60%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,99,71,0.03),transparent_50%)]"></div>
 
-    <div class="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center relative z-[1]">
+    <div class="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center relative z-[1]">
       <!-- Text -->
-      <div id="heroText" class="max-w-[580px] lg:max-w-none text-center lg:text-left mx-auto lg:mx-0">
-        <p class="hero-child font-body text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-4">Hello, I'm</p>
-        <h1 class="hero-child font-display text-5xl sm:text-6xl lg:text-7xl font-normal leading-none tracking-tight text-ink mb-5">Wing Tong Leong</h1>
-        <p class="hero-child font-display text-lg lg:text-xl font-normal italic text-ink-light leading-relaxed mb-6">Senior Product Designer</p>
-        <p class="hero-child text-[0.95rem] text-muted leading-relaxed mb-8">
-          I craft user-centric experiences across F&amp;B, FinTech, and digital transformation — with over a decade of turning complex problems into elegant interfaces.
+      <div id="heroText" class="max-w-[600px] lg:max-w-none text-center lg:text-left mx-auto lg:mx-0">
+        <p class="hero-child font-mono text-xs text-accent tracking-[0.2em] uppercase mb-6">Senior Product Designer</p>
+        <h1 class="hero-child font-display text-5xl sm:text-6xl lg:text-[5.5rem] font-800 leading-[0.95] tracking-tight text-text mb-6">
+          Wing Tong<br>Leong
+        </h1>
+        <p class="hero-child text-base text-text-dim leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
+          Crafting user-centric experiences across F&amp;B, FinTech, and digital transformation — over a decade of turning complex problems into elegant interfaces.
         </p>
         <div class="hero-child flex gap-4 flex-wrap justify-center lg:justify-start">
-          <a href="#portfolio" class="inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-cream font-body text-sm font-semibold tracking-wide rounded-full border-none cursor-pointer transition-all duration-300 hover:bg-ink hover:-translate-y-0.5 hover:shadow-xl no-underline">
+          <a href="#portfolio" class="inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-white font-body text-sm font-semibold tracking-wide rounded-full border-none cursor-pointer transition-all duration-300 hover:bg-accent-muted hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(255,99,71,0.3)] no-underline">
             <i data-lucide="layout-grid" class="w-4 h-4"></i>
-            View Portfolio
+            View Work
           </a>
-          <a href="#" class="inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-ink font-body text-sm font-semibold tracking-wide rounded-full border-[1.5px] border-border-custom cursor-pointer transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5 no-underline">
+          <a href="#" class="inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-text font-body text-sm font-semibold tracking-wide rounded-full border border-stroke cursor-pointer transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5 no-underline">
             <i data-lucide="download" class="w-4 h-4"></i>
             Download CV
           </a>
         </div>
-        <div class="hero-child flex items-center gap-3 mt-6 justify-center lg:justify-start">
-          <span class="text-xs text-muted font-medium tracking-wide">Get in touch</span>
-          <div class="w-6 h-px bg-border-custom"></div>
-          <a href="mailto:leongwingtong@gmail.com" target="_blank" title="Email" class="w-10 h-10 rounded-full bg-white border border-border-custom flex items-center justify-center text-ink-light transition-all duration-300 hover:bg-accent hover:text-white hover:border-accent hover:-translate-y-0.5 hover:shadow-md no-underline">
+        <div class="hero-child flex items-center gap-3 mt-8 justify-center lg:justify-start">
+          <span class="text-xs text-text-faint font-mono tracking-wider uppercase">Connect</span>
+          <div class="w-6 h-px bg-stroke"></div>
+          <a href="mailto:leongwingtong@gmail.com" target="_blank" title="Email" class="w-10 h-10 rounded-full bg-bg-elevated border border-stroke flex items-center justify-center text-text-dim transition-all duration-300 hover:bg-accent hover:text-white hover:border-accent hover:-translate-y-0.5 hover:shadow-lg no-underline">
             <i data-lucide="mail" class="w-[18px] h-[18px]"></i>
           </a>
-          <a href="https://www.linkedin.com/in/wing-tong-leong/" target="_blank" title="LinkedIn" class="w-10 h-10 rounded-full bg-white border border-border-custom flex items-center justify-center text-ink-light transition-all duration-300 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] hover:-translate-y-0.5 hover:shadow-md no-underline">
+          <a href="https://www.linkedin.com/in/wing-tong-leong/" target="_blank" title="LinkedIn" class="w-10 h-10 rounded-full bg-bg-elevated border border-stroke flex items-center justify-center text-text-dim transition-all duration-300 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] hover:-translate-y-0.5 hover:shadow-lg no-underline">
             <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://wa.me/6592709783" target="_blank" title="WhatsApp" class="w-10 h-10 rounded-full bg-bg-elevated border border-stroke flex items-center justify-center text-text-dim transition-all duration-300 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:-translate-y-0.5 hover:shadow-lg no-underline">
+            <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://t.me/+6592709783" target="_blank" title="Telegram" class="w-10 h-10 rounded-full bg-bg-elevated border border-stroke flex items-center justify-center text-text-dim transition-all duration-300 hover:bg-[#26A5E4] hover:text-white hover:border-[#26A5E4] hover:-translate-y-0.5 hover:shadow-lg no-underline">
+            <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Decorative geometric composition (instead of photo) -->
+      <!-- Photo -->
       <div id="heroVisual" class="flex justify-center items-center relative order-first lg:order-last">
-        <div class="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px]">
-          <!-- Overlapping geometric shapes -->
-          <div class="absolute top-0 right-0 w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] rounded-3xl bg-accent/10 rotate-12 animate-spin-slow" style="animation-duration: 40s;"></div>
-          <div class="absolute bottom-0 left-0 w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] rounded-full bg-sand/20"></div>
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] rounded-2xl bg-accent/[0.07] border border-accent/20 backdrop-blur-sm flex items-center justify-center">
-            <span class="font-display text-4xl sm:text-5xl text-accent/40 italic">WT</span>
+        <div class="relative">
+          <div class="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-accent/30 relative z-10">
+            <img src="https://media.licdn.com/dms/image/v2/C4E03AQG0wjsBBO9peg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516507355210?e=1772668800&v=beta&t=m6S1nhHifU4Msqd1MLbBNcvoIi9fvqOoDEeIFBxMSGE" alt="Wing Tong Leong" class="w-full h-full object-cover">
           </div>
+          <div class="photo-ring absolute -inset-3 rounded-full border border-accent/15"></div>
+          <div class="absolute -inset-6 rounded-full border border-accent/[0.06]"></div>
+          <!-- Decorative accent dot -->
+          <div class="absolute top-4 -right-2 w-3 h-3 rounded-full bg-accent/60"></div>
+          <div class="absolute -bottom-1 left-8 w-2 h-2 rounded-full bg-accent/40"></div>
         </div>
       </div>
     </div>
 
     <!-- Scroll indicator -->
-    <div id="scrollIndicator" class="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-muted text-xs tracking-widest uppercase">
+    <div id="scrollIndicator" class="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-text-faint text-xs font-mono tracking-widest uppercase">
       <span>Scroll</span>
       <div class="w-px h-10 bg-gradient-to-b from-accent to-transparent animate-pulse-line"></div>
     </div>
   </section>
 
   <!-- ==================== STATS BAR ==================== -->
-  <div id="statsBar" class="bg-white border border-border-custom rounded-[20px] py-10 px-6 sm:px-12 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 -mt-12 mx-4 sm:mx-8 max-w-[1200px] lg:mx-auto relative z-[2] shadow-[0_4px_30px_rgba(30,21,21,0.06)]">
+  <div id="statsBar" class="border-y border-stroke py-10 px-6 sm:px-12 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mx-4 sm:mx-8 max-w-[1200px] lg:mx-auto relative z-[2]">
     <div class="text-center">
-      <div class="font-display text-4xl font-normal text-accent leading-none stat-counter" data-target="10">0</div>
-      <div class="text-xs text-muted mt-1 font-medium">Years in Design</div>
+      <div class="font-display text-4xl font-bold text-accent leading-none stat-counter" data-target="10">0</div>
+      <div class="text-xs text-text-faint mt-2 font-mono uppercase tracking-wider">Years in Design</div>
     </div>
     <div class="text-center">
-      <div class="font-display text-4xl font-normal text-accent leading-none stat-counter" data-target="4">0</div>
-      <div class="text-xs text-muted mt-1 font-medium">Industries</div>
+      <div class="font-display text-4xl font-bold text-accent leading-none stat-counter" data-target="4">0</div>
+      <div class="text-xs text-text-faint mt-2 font-mono uppercase tracking-wider">Industries</div>
     </div>
     <div class="text-center">
-      <div class="font-display text-4xl font-normal text-accent leading-none stat-counter" data-target="6">0</div>
-      <div class="text-xs text-muted mt-1 font-medium">Case Studies</div>
+      <div class="font-display text-4xl font-bold text-accent leading-none stat-counter" data-target="6">0</div>
+      <div class="text-xs text-text-faint mt-2 font-mono uppercase tracking-wider">Case Studies</div>
     </div>
     <div class="text-center">
-      <div class="font-display text-4xl font-normal text-accent leading-none stat-counter" data-target="5">0</div>
-      <div class="text-xs text-muted mt-1 font-medium">Certifications</div>
+      <div class="font-display text-4xl font-bold text-accent leading-none stat-counter" data-target="5">0</div>
+      <div class="text-xs text-text-faint mt-2 font-mono uppercase tracking-wider">Certifications</div>
     </div>
   </div>
 
   <!-- ==================== ABOUT ==================== -->
   <section id="about" class="py-24 px-8 max-w-[1200px] mx-auto">
     <div class="gsap-reveal">
-      <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3">About</p>
-      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-ink mb-4">Designing with intent</h2>
+      <p class="section-label text-accent mb-4">01 / About</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text mb-4">Designing<br>with intent</h2>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start mt-10">
       <div class="gsap-reveal">
-        <p class="text-base text-ink-light leading-relaxed mb-5">
-          I'm a Senior Product Designer based in Singapore with over a decade of experience spanning <strong class="text-ink">F&amp;B technology</strong>, <strong class="text-ink">FinTech</strong>, and <strong class="text-ink">digital transformation consultancy</strong>. I specialize in end-to-end product development — from user research and wireframing through to high-fidelity prototypes and design system governance.
+        <p class="text-base text-text-dim leading-relaxed mb-5">
+          I'm a Senior Product Designer based in Singapore with over a decade of experience spanning <strong class="text-text">F&amp;B technology</strong>, <strong class="text-text">FinTech</strong>, and <strong class="text-text">digital transformation consultancy</strong>. I specialize in end-to-end product development — from user research and wireframing through to high-fidelity prototypes and design system governance.
         </p>
-        <p class="text-base text-ink-light leading-relaxed">
+        <p class="text-base text-text-dim leading-relaxed">
           At A5tec, I led Design Ops and educated cross-functional teams on Figma best practices. At EY, I facilitated digital transformation for strategic accounts across industries. My Fine Arts background from NTU, with a focus on Interactive Media, gives me a unique lens on both the aesthetic and functional dimensions of product design.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="gsap-reveal bg-white border border-border-custom rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-sand-light cursor-default">
-          <div class="w-10 h-10 rounded-xl bg-accent/[0.08] flex items-center justify-center mb-3">
+        <div class="gsap-reveal specialty-card bg-bg-elevated border border-stroke rounded-2xl p-6 cursor-default">
+          <div class="w-10 h-10 rounded-xl bg-accent/[0.1] flex items-center justify-center mb-3">
             <i data-lucide="layers" class="w-5 h-5 text-accent"></i>
           </div>
-          <div class="font-display text-lg mb-1">Product Design</div>
-          <div class="text-xs text-muted leading-relaxed">End-to-end product lifecycle from concept to launch</div>
+          <div class="font-display text-lg font-semibold text-text mb-1">Product Design</div>
+          <div class="text-xs text-text-faint leading-relaxed">End-to-end product lifecycle from concept to launch</div>
         </div>
-        <div class="gsap-reveal bg-white border border-border-custom rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-sand-light cursor-default">
-          <div class="w-10 h-10 rounded-xl bg-accent/[0.08] flex items-center justify-center mb-3">
+        <div class="gsap-reveal specialty-card bg-bg-elevated border border-stroke rounded-2xl p-6 cursor-default">
+          <div class="w-10 h-10 rounded-xl bg-accent/[0.1] flex items-center justify-center mb-3">
             <i data-lucide="search" class="w-5 h-5 text-accent"></i>
           </div>
-          <div class="font-display text-lg mb-1">User Research</div>
-          <div class="text-xs text-muted leading-relaxed">Field studies, interviews, and usability testing</div>
+          <div class="font-display text-lg font-semibold text-text mb-1">User Research</div>
+          <div class="text-xs text-text-faint leading-relaxed">Field studies, interviews, and usability testing</div>
         </div>
-        <div class="gsap-reveal bg-white border border-border-custom rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-sand-light cursor-default">
-          <div class="w-10 h-10 rounded-xl bg-accent/[0.08] flex items-center justify-center mb-3">
+        <div class="gsap-reveal specialty-card bg-bg-elevated border border-stroke rounded-2xl p-6 cursor-default">
+          <div class="w-10 h-10 rounded-xl bg-accent/[0.1] flex items-center justify-center mb-3">
             <i data-lucide="settings" class="w-5 h-5 text-accent"></i>
           </div>
-          <div class="font-display text-lg mb-1">Design Ops</div>
-          <div class="text-xs text-muted leading-relaxed">Design systems, Figma workflows, and team education</div>
+          <div class="font-display text-lg font-semibold text-text mb-1">Design Ops</div>
+          <div class="text-xs text-text-faint leading-relaxed">Design systems, Figma workflows, and team education</div>
         </div>
-        <div class="gsap-reveal bg-white border border-border-custom rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-sand-light cursor-default">
-          <div class="w-10 h-10 rounded-xl bg-accent/[0.08] flex items-center justify-center mb-3">
+        <div class="gsap-reveal specialty-card bg-bg-elevated border border-stroke rounded-2xl p-6 cursor-default">
+          <div class="w-10 h-10 rounded-xl bg-accent/[0.1] flex items-center justify-center mb-3">
             <i data-lucide="smartphone" class="w-5 h-5 text-accent"></i>
           </div>
-          <div class="font-display text-lg mb-1">Mobile UI</div>
-          <div class="text-xs text-muted leading-relaxed">Native mobile interface and interaction design</div>
+          <div class="font-display text-lg font-semibold text-text mb-1">Mobile UI</div>
+          <div class="text-xs text-text-faint leading-relaxed">Native mobile interface and interaction design</div>
         </div>
       </div>
     </div>
@@ -202,64 +211,100 @@
   <!-- ==================== PORTFOLIO ==================== -->
   <section id="portfolio" class="py-24 px-8 max-w-[1200px] mx-auto">
     <div class="gsap-reveal">
-      <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3">Portfolio</p>
-      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-ink mb-4">Selected work</h2>
-      <p class="text-base text-muted max-w-xl leading-relaxed mb-10">Click any project to explore the full case study.</p>
+      <p class="section-label text-accent mb-4">02 / Work</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text mb-4">Selected projects</h2>
+      <p class="text-base text-text-dim max-w-xl leading-relaxed mb-12">Click any project to explore the full case study.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('dashboard')">
-        <div class="h-2 bg-[#E17055]"></div>
+      <div class="gsap-reveal project-card bg-bg-elevated border border-stroke rounded-2xl overflow-hidden cursor-pointer group" onclick="openProject('dashboard')">
+        <div class="h-48 bg-gradient-to-br from-[#E17055]/20 via-[#E17055]/5 to-transparent relative overflow-hidden">
+          <img src="https://wingtong.surge.sh/assets/images/dashboard-teaser2.jpg" alt="POS Management Dashboard" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-xs font-mono text-text-dim">View Case Study &rarr;</span>
+          </div>
+        </div>
         <div class="p-6">
-          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">POS Management Dashboard</h3>
-          <p class="text-sm text-muted leading-relaxed mb-4">Redesigning the management experience for multi-location restaurants</p>
-          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#E17055]/[0.08] text-[#E17055] border border-[#E17055]/20">Designer &amp; Product Manager</span>
+          <h3 class="font-display text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">POS Management Dashboard</h3>
+          <p class="text-sm text-text-dim leading-relaxed mb-4">Redesigning the management experience for multi-location restaurants</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-[#E17055]/10 text-[#E17055] border border-[#E17055]/20">Designer &amp; Product Manager</span>
         </div>
       </div>
 
-      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('pos')">
-        <div class="h-2 bg-[#6C5CE7]"></div>
+      <div class="gsap-reveal project-card bg-bg-elevated border border-stroke rounded-2xl overflow-hidden cursor-pointer group" onclick="openProject('pos')">
+        <div class="h-48 bg-gradient-to-br from-[#6C5CE7]/20 via-[#6C5CE7]/5 to-transparent relative overflow-hidden">
+          <img src="https://wingtong.surge.sh/assets/images/pos-teaser.jpg" alt="POS Checkout App" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-xs font-mono text-text-dim">View Case Study &rarr;</span>
+          </div>
+        </div>
         <div class="p-6">
-          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">POS Checkout App</h3>
-          <p class="text-sm text-muted leading-relaxed mb-4">Optimising the checkout process for quick service restaurants</p>
-          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#6C5CE7]/[0.08] text-[#6C5CE7] border border-[#6C5CE7]/20">Sole Designer</span>
+          <h3 class="font-display text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">POS Checkout App</h3>
+          <p class="text-sm text-text-dim leading-relaxed mb-4">Optimising the checkout process for quick service restaurants</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-[#6C5CE7]/10 text-[#6C5CE7] border border-[#6C5CE7]/20">Sole Designer</span>
         </div>
       </div>
 
-      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('accountancy')">
-        <div class="h-2 bg-[#0984E3]"></div>
+      <div class="gsap-reveal project-card bg-bg-elevated border border-stroke rounded-2xl overflow-hidden cursor-pointer group" onclick="openProject('accountancy')">
+        <div class="h-48 bg-gradient-to-br from-[#0984E3]/20 via-[#0984E3]/5 to-transparent relative overflow-hidden">
+          <img src="https://wingtong.surge.sh/assets/images/ISCA-teaser.jpg" alt="ISCA Course Platform" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-xs font-mono text-text-dim">View Case Study &rarr;</span>
+          </div>
+        </div>
         <div class="p-6">
-          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">ISCA Course Platform</h3>
-          <p class="text-sm text-muted leading-relaxed mb-4">Helping accountants upskill with courses and events</p>
-          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#0984E3]/[0.08] text-[#0984E3] border border-[#0984E3]/20">Experience &amp; Interface Designer</span>
+          <h3 class="font-display text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">ISCA Course Platform</h3>
+          <p class="text-sm text-text-dim leading-relaxed mb-4">Helping accountants upskill with courses and events</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-[#0984E3]/10 text-[#0984E3] border border-[#0984E3]/20">Experience &amp; Interface Designer</span>
         </div>
       </div>
 
-      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('biz360')">
-        <div class="h-2 bg-[#00B894]"></div>
+      <div class="gsap-reveal project-card bg-bg-elevated border border-stroke rounded-2xl overflow-hidden cursor-pointer group" onclick="openProject('biz360')">
+        <div class="h-48 bg-gradient-to-br from-[#00B894]/20 via-[#00B894]/5 to-transparent relative overflow-hidden">
+          <img src="https://wingtong.surge.sh/assets/images/Biz360-teaser.jpg" alt="Biz360" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-xs font-mono text-text-dim">View Case Study &rarr;</span>
+          </div>
+        </div>
         <div class="p-6">
-          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">Biz360</h3>
-          <p class="text-sm text-muted leading-relaxed mb-4">Guiding entrepreneurs to start businesses in Singapore</p>
-          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#00B894]/[0.08] text-[#00B894] border border-[#00B894]/20">Designer</span>
+          <h3 class="font-display text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">Biz360</h3>
+          <p class="text-sm text-text-dim leading-relaxed mb-4">Guiding entrepreneurs to start businesses in Singapore</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-[#00B894]/10 text-[#00B894] border border-[#00B894]/20">Designer</span>
         </div>
       </div>
 
-      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('gateway')">
-        <div class="h-2 bg-[#FDCB6E]"></div>
+      <div class="gsap-reveal project-card bg-bg-elevated border border-stroke rounded-2xl overflow-hidden cursor-pointer group" onclick="openProject('gateway')">
+        <div class="h-48 bg-gradient-to-br from-[#FDCB6E]/20 via-[#FDCB6E]/5 to-transparent relative overflow-hidden">
+          <img src="https://wingtong.surge.sh/assets/images/SATS-teaser2.jpg" alt="Gateway & Catering" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-xs font-mono text-text-dim">View Case Study &rarr;</span>
+          </div>
+        </div>
         <div class="p-6">
-          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">Gateway &amp; Catering</h3>
-          <p class="text-sm text-muted leading-relaxed mb-4">Building an emotional connection for a gateway &amp; catering brand</p>
-          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#FDCB6E]/[0.08] text-[#9A7B2D] border border-[#FDCB6E]/20">Lead Designer</span>
+          <h3 class="font-display text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">Gateway &amp; Catering</h3>
+          <p class="text-sm text-text-dim leading-relaxed mb-4">Building an emotional connection for a gateway &amp; catering brand</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-[#FDCB6E]/10 text-[#FDCB6E] border border-[#FDCB6E]/20">Lead Designer</span>
         </div>
       </div>
 
-      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('scs')">
-        <div class="h-2 bg-[#E84393]"></div>
+      <div class="gsap-reveal project-card bg-bg-elevated border border-stroke rounded-2xl overflow-hidden cursor-pointer group" onclick="openProject('scs')">
+        <div class="h-48 bg-gradient-to-br from-[#E84393]/20 via-[#E84393]/5 to-transparent relative overflow-hidden">
+          <img src="https://wingtong.surge.sh/assets/images/SCS-teaser.jpg" alt="Science Centre Singapore" class="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-xs font-mono text-text-dim">View Case Study &rarr;</span>
+          </div>
+        </div>
         <div class="p-6">
-          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">Science Centre Singapore</h3>
-          <p class="text-sm text-muted leading-relaxed mb-4">Making trip planning to Science Centre a breeze</p>
-          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#E84393]/[0.08] text-[#E84393] border border-[#E84393]/20">Interface Designer</span>
+          <h3 class="font-display text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">Science Centre Singapore</h3>
+          <p class="text-sm text-text-dim leading-relaxed mb-4">Making trip planning to Science Centre a breeze</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-[#E84393]/10 text-[#E84393] border border-[#E84393]/20">Interface Designer</span>
         </div>
       </div>
 
@@ -267,579 +312,372 @@
   </section>
 
   <!-- ==================== PROJECT MODAL ==================== -->
-  <div id="projectModal" class="fixed inset-0 z-[2000] bg-ink/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-label="Project case study" onclick="if(event.target===this)closeProject()">
-    <div id="projectModalContent" class="absolute inset-0 sm:inset-4 lg:inset-8 bg-cream rounded-none sm:rounded-2xl overflow-y-auto translate-y-8 transition-all duration-400" style="transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);">
-      <button onclick="closeProject()" aria-label="Close" class="sticky top-4 float-right m-4 mr-6 z-10 w-10 h-10 rounded-full bg-white border border-border-custom flex items-center justify-center text-ink-light hover:bg-ink hover:text-cream transition-all duration-300 cursor-pointer">
+  <div id="projectModal" class="fixed inset-0 z-[2000] bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-label="Project case study" onclick="if(event.target===this)closeProject()">
+    <div id="projectModalContent" class="absolute inset-0 sm:inset-4 lg:inset-8 bg-bg-surface rounded-none sm:rounded-2xl overflow-y-auto translate-y-8 transition-all duration-400" style="transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);">
+      <button onclick="closeProject()" aria-label="Close" class="sticky top-4 float-right m-4 mr-6 z-10 w-10 h-10 rounded-full bg-bg-elevated border border-stroke flex items-center justify-center text-text-dim hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 cursor-pointer">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
       <div id="projectModalBody" class="max-w-[900px] mx-auto px-6 sm:px-10 py-12 clear-both"></div>
     </div>
   </div>
 
-  <!-- ==================== CASE STUDY TEMPLATES ==================== -->
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section id="experience" class="py-24">
+    <div class="max-w-[1200px] mx-auto px-8 pb-10 gsap-reveal">
+      <p class="section-label text-accent mb-4">03 / Experience</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text mb-4">Where I've designed</h2>
+      <p class="text-base text-text-dim max-w-xl leading-relaxed">Click "Learn more" on any achievement to explore the deeper story behind it.</p>
+    </div>
 
-  <div id="project-dashboard" class="hidden">
-    <div class="h-1 w-20 bg-[#E17055] rounded-full mb-8"></div>
-    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#E17055] mb-3">Case Study</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Redesigning the POS management experience for multi-location restaurants</h2>
-    <p class="text-sm text-muted mb-8">Designer &amp; Product Manager &middot; F&amp;B Technology</p>
-
-    <div class="prose max-w-none">
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A central POS management dashboard web app enabling IT executives to update menu and point-of-sale configurations across multiple restaurant locations. The client operates 20 quick-service restaurant chains in Singapore.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Inefficient Menu Updates:</strong> Required multiple steps to update menu data per outlet per product. When price adjustments affected multiple locations, executives updated each outlet individually. CSV imports required separate files per category per outlet.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Inflexible Update Timing:</strong> Any action on the dashboard took immediate effect, forcing updates only before business hours or at midnight.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Offline Accessibility Issues:</strong> Web-based system became unavailable when cashiers refreshed pages offline, with intermittent internet creating escalations.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Master Categories:</strong> Update product lists across outlets simultaneously instead of one-by-one.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Localised Pricing:</strong> Each product displays its default price with all outlets. Outlets can override the default or hide products. Only overridden outlets are shown.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Manual Sync Control:</strong> Universal Sync Button appears when unsynced POSs exist, with bulk actions for multiple devices.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4">Eliminates CSV imports and reduces menu management effort. Planned metrics: CSAT, time tracking for updates, escalation reduction.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-        <div class="bg-[#E17055]/[0.06] border border-[#E17055]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#E17055] mb-1">0</div>
-          <div class="text-xs text-muted">CSV Imports Needed</div>
+    <!-- TCG Unite -->
+    <div class="gsap-reveal flavor-tcg relative py-16 px-8 bg-tcg-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div class="lg:sticky lg:top-[calc(64px+2rem)]">
+          <div class="w-14 h-14 rounded-full bg-tcg/[0.12] flex items-center justify-center mb-4">
+            <i data-lucide="gamepad-2" class="w-7 h-7 text-tcg"></i>
+          </div>
+          <h3 class="font-display text-2xl font-bold leading-tight text-tcg mb-2">TCG Unite</h3>
+          <p class="text-sm font-semibold text-text mb-1">Senior Product Designer</p>
+          <p class="text-xs text-text-faint leading-relaxed">Jul 2024 &ndash; Oct 2025 &middot; 1 yr 4 mos<br>Singapore &middot; Hybrid/Contract</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-tcg/[0.1] text-tcg border border-tcg/20">FinTech &middot; TCG</span>
         </div>
-        <div class="bg-[#E17055]/[0.06] border border-[#E17055]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#E17055] mb-1">20</div>
-          <div class="text-xs text-muted">Restaurant Chains Served</div>
-        </div>
-        <div class="bg-[#E17055]/[0.06] border border-[#E17055]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#E17055] mb-1">1x</div>
-          <div class="text-xs text-muted">Single Update for All Outlets</div>
+        <div>
+          <p class="font-display text-lg italic text-tcg/70 mb-4 leading-relaxed">Designing a mobile Trading Card Game app from the ground up</p>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">Mobile App Design:</strong> Led the interface and experience design for a mobile Trading Card Game (TCG) app from the ground up.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Leading the interface and experience design for a mobile Trading Card Game app, designing all screens and interactions from scratch for a FinTech/gaming startup')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">Senior Design Leadership:</strong> Managed both contract and full-time senior design responsibilities focused on mobile interface and UI design.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Managing both contract and full-time senior product design responsibilities, focusing on mobile interface design and UI patterns for a TCG app')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="project-pos" class="hidden">
-    <div class="h-1 w-20 bg-[#6C5CE7] rounded-full mb-8"></div>
-    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#6C5CE7] mb-3">Case Study</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Optimising the checkout process for quick service restaurants</h2>
-    <p class="text-sm text-muted mb-8">Sole Designer &middot; Experience design, visual interface, design system</p>
-
-    <div class="prose max-w-none">
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">An Android POS app for quick service restaurant cashiers to take orders and process payment. Transitioning from cloud-based to a hybrid POS system storing data locally while syncing to the cloud.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Limited Customisation:</strong> Only one product variant could be recorded, preventing multiple modifications like "no chilli".</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Interface Usability:</strong> Quantity stepper located far from cart items and close to clear cart button, causing accidental presses.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Payment Screen Confusion:</strong> Pay, clear, and cancel buttons too close together.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Receipt Discovery:</strong> Cashiers had to key in exact receipt numbers to locate receipts.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Accessibility:</strong> Majority of cashiers had Chinese as native language with limited English literacy. Truncated product names, untranslated errors, small fonts.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Multiple Customisations:</strong> One-page scroll option (fewer taps), optional with defaults.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Simplified Cart Controls:</strong> Quantity stepper relocated to individual cart items, swipe to delete.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Display Labels:</strong> Physical counter numbers on product cards.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Payment Optimization:</strong> Voucher button relocated to payment screen, "exact" button for precise amounts.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Receipt Browsing:</strong> Changed from search to browse mode with daily receipt list.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Design System:</strong> Comprehensive system developed during high-fidelity phases.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-        <div class="bg-[#6C5CE7]/[0.06] border border-[#6C5CE7]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#6C5CE7] mb-1">10%</div>
-          <div class="text-xs text-muted">Decreased Avg Transaction Time</div>
+    <!-- A5tec -->
+    <div class="gsap-reveal flavor-a5tec relative py-16 px-8 bg-a5tec-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div class="lg:sticky lg:top-[calc(64px+2rem)]">
+          <div class="w-14 h-14 rounded-full bg-a5tec/[0.12] flex items-center justify-center mb-4">
+            <i data-lucide="utensils" class="w-7 h-7 text-a5tec"></i>
+          </div>
+          <h3 class="font-display text-2xl font-bold leading-tight text-a5tec mb-2">A5tec</h3>
+          <p class="font-display text-sm italic text-text-faint mb-3">Feisiong Group Subsidiary</p>
+          <p class="text-sm font-semibold text-text mb-1">Product Lead (Design)</p>
+          <p class="text-xs text-text-faint leading-relaxed">Jan 2022 &ndash; Oct 2023 &middot; 1 yr 10 mos<br>Singapore</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-a5tec/[0.1] text-a5tec border border-a5tec/20">F&amp;B &middot; Digital Products</span>
         </div>
-        <div class="bg-[#6C5CE7]/[0.06] border border-[#6C5CE7]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#6C5CE7] mb-1">20%</div>
-          <div class="text-xs text-muted">Decreased User Error Rate</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="project-accountancy" class="hidden">
-    <div class="h-1 w-20 bg-[#0984E3] rounded-full mb-8"></div>
-    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#0984E3] mb-3">Case Study</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Helping accountants upskill with courses</h2>
-    <p class="text-sm text-muted mb-8">Experience &amp; Interface Designer &middot; Institute of Singapore Chartered Accountants</p>
-
-    <div class="prose max-w-none">
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A redesign for the Institute of Singapore Chartered Accountants (ISCA) — Singapore's accountancy body with over 32,000 members. Corporate website redesign and app prototype completed within seven months.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Poor Search Relevance:</strong> Results sorted alphabetically, overwhelming filters, calendar view on separate page.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Poor Wayfinding:</strong> Deep navigation, confusing terminology ("capability development", "CPE training"), excessive weekly inquiries.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Irrelevant Content for Non-Members:</strong> Website tailored to existing members, not prospective accountants.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Lengthy Add-to-Cart Process:</strong> Course-specific declarations plus personal details forms, cumbersome with SSG/SFC funding.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Flattened IA:</strong> Reduced from 7 to 3 layers, renamed ambiguous terminology.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Improved Search:</strong> Based on 15 interviews — top criteria: topic/keyword, date availability, CPE hours. Added calendar view alongside list view.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Persona-Based Segmentation:</strong> Four user types (junior, experienced, students, private). Added persona filter on homepage.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Streamlined Purchase:</strong> Combined date and funding selection, moved declarations to checkout, auto-fill from profile.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-        <div class="bg-[#0984E3]/[0.06] border border-[#0984E3]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#0984E3] mb-1">10%</div>
-          <div class="text-xs text-muted">Reduced Bounce Rate</div>
-        </div>
-        <div class="bg-[#0984E3]/[0.06] border border-[#0984E3]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#0984E3] mb-1">5,000+</div>
-          <div class="text-xs text-muted">App Downloads</div>
-        </div>
-        <div class="bg-[#0984E3]/[0.06] border border-[#0984E3]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#0984E3] mb-1">4/5</div>
-          <div class="text-xs text-muted">Usability Score</div>
+        <div>
+          <p class="font-display text-lg italic text-a5tec/70 mb-4 leading-relaxed">Driving end-to-end product development for digital F&amp;B products</p>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">Product Development:</strong> Drove the end-to-end product development lifecycle for digital F&amp;B products.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Driving end-to-end product development lifecycle for digital F&B products at A5tec, a subsidiary of Feisiong Group')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">Stakeholder Collaboration:</strong> Collaborated with stakeholders to define product strategy and gather requirements.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Collaborating with stakeholders to define product strategy and gather requirements for digital F&B products')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">UI/UX Design:</strong> Designed low and high-fidelity screens based on user research.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Designing low and high-fidelity screens based on user research for F&B digital products')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">Agile Implementation:</strong> Implemented Agile methodologies, including regular sprint reviews and manual QA testing.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Implementing Agile methodologies including sprint reviews and manual QA testing for F&B product development')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">Design Ops:</strong> Spearheaded Design Ops and educated cross-functional teams on Figma best practices.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Spearheading Design Ops at A5tec, educating cross-functional teams on Figma best practices and design system governance')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="project-biz360" class="hidden">
-    <div class="h-1 w-20 bg-[#00B894] rounded-full mb-8"></div>
-    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#00B894] mb-3">Case Study</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Guiding entrepreneurs to start businesses</h2>
-    <p class="text-sm text-muted mb-8">Designer &middot; Government Digital Services</p>
-
-    <div class="prose max-w-none">
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A portal consolidating government business applications into one unified platform where Singapore business owners can submit and track applications centrally.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Fragmented Government Services:</strong> Business owners had to bounce between government agencies for various applications.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Knowledge Gap:</strong> Novice entrepreneurs lacked business knowledge, risking operational delays from missed prerequisite licenses.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Guided Journey:</strong> Sequential progress tracker guiding users through business tasks toward goals.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Compliance Integration:</strong> Each step provides application forms with compliance requirements, reducing rejection likelihood.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Intuitive Design:</strong> 100% participant comprehension in usability testing.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-        <div class="bg-[#00B894]/[0.06] border border-[#00B894]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#00B894] mb-1">S$500</div>
-          <div class="text-xs text-muted">Reduced Total Fees</div>
+    <!-- Career Break -->
+    <div class="gsap-reveal relative py-12 px-8 bg-bg-surface overflow-hidden">
+      <div class="max-w-[1200px] mx-auto flex items-center gap-6">
+        <div class="w-12 h-12 rounded-full bg-text-faint/[0.1] flex items-center justify-center flex-shrink-0">
+          <i data-lucide="heart" class="w-6 h-6 text-text-faint"></i>
         </div>
-        <div class="bg-[#00B894]/[0.06] border border-[#00B894]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#00B894] mb-1">10-14d</div>
-          <div class="text-xs text-muted">Reduced Turnaround Time</div>
-        </div>
-        <div class="bg-[#00B894]/[0.06] border border-[#00B894]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#00B894] mb-1">547K+</div>
-          <div class="text-xs text-muted">Businesses Adopted</div>
+        <div>
+          <h3 class="font-display text-xl font-semibold text-text-dim mb-1">Career Break</h3>
+          <p class="text-sm text-text-faint">Apr 2021 &ndash; Dec 2021 &middot; 9 mos &middot; Health and well-being</p>
+          <p class="text-xs text-text-faint mt-1">Focused on rest while maintaining select freelance projects.</p>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="project-gateway" class="hidden">
-    <div class="h-1 w-20 bg-[#FDCB6E] rounded-full mb-8"></div>
-    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#9A7B2D] mb-3">Case Study</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Building an emotional connection for a gateway &amp; catering brand</h2>
-    <p class="text-sm text-muted mb-8">Lead Designer &middot; Team of 7, 7-month project</p>
-
-    <div class="prose max-w-none">
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A corporate website redesign for an aviation, healthcare, and hospitality services company operating across 55+ locations.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Scalability Issues:</strong> Existing site couldn't scale with hypergrowth.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Brand Communication Gap:</strong> Needed to communicate expansion into gateway and catering services.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Poor Navigation:</strong> Navigation for services and global contacts was poor.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">People-First Storytelling:</strong> Foregrounded staff through authentic articles, videos, photos, and emotional messaging.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Simplified Service Architecture:</strong> Tested two-way filter (business needs x industry sectors) but found it introduced friction. Reverted to straightforward two-category structure for 60+ services.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-        <div class="bg-[#FDCB6E]/[0.06] border border-[#FDCB6E]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#9A7B2D] mb-1">78%</div>
-          <div class="text-xs text-muted">Increased Website Visits</div>
+    <!-- EY -->
+    <div class="gsap-reveal flavor-ey relative py-16 px-8 bg-ey-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div class="lg:sticky lg:top-[calc(64px+2rem)]">
+          <div class="w-14 h-14 rounded-full bg-ey/[0.12] flex items-center justify-center mb-4">
+            <i data-lucide="building-2" class="w-7 h-7 text-ey"></i>
+          </div>
+          <h3 class="font-display text-2xl font-bold leading-tight text-ey mb-2">EY (Ernst &amp; Young)</h3>
+          <p class="text-sm font-semibold text-text mb-1">UI/UX Designer</p>
+          <p class="text-xs text-text-faint leading-relaxed">Oct 2018 &ndash; Apr 2021 &middot; 2 yrs 7 mos<br>Singapore &middot; Hybrid</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-ey/[0.1] text-ey border border-ey/20">Consultancy &middot; Digital Transformation</span>
         </div>
-        <div class="bg-[#FDCB6E]/[0.06] border border-[#FDCB6E]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#9A7B2D] mb-1">55+</div>
-          <div class="text-xs text-muted">Global Locations Served</div>
+        <div>
+          <p class="font-display text-lg italic text-ey/70 mb-4 leading-relaxed">Leading UI/UX design for strategic accounts across industries</p>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">Strategic Accounts:</strong> Led UI/UX design for strategic accounts, facilitating digital transformation across various industries.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Leading UI/UX design at EY for strategic accounts, facilitating digital transformation across multiple industries in Singapore')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">User Research:</strong> Assisted in user research, including stakeholder interviews and workshops.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Conducting user research at EY including stakeholder interviews and workshops for digital transformation projects')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="project-scs" class="hidden">
-    <div class="h-1 w-20 bg-[#E84393] rounded-full mb-8"></div>
-    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#E84393] mb-3">Case Study</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Making trip planning to Science Centre a breeze</h2>
-    <p class="text-sm text-muted mb-8">Interface Designer &middot; Team with lead designer, PM, researcher, 3 developers</p>
-
-    <div class="prose max-w-none">
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A scientific institution corporate website redesign expanding the target audience from parents to young adults, over a 6-month period.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Information Overload:</strong> Content-heavy site made finding key exhibition info difficult. Some exhibits required advanced science literacy unsuitable for young children.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Outdated Visual Identity:</strong> Target audience shifted to include young adults, but design still targeted children.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Itinerary Planner:</strong> Smart generator creating personalized itineraries based on visit duration, children's ages, and interests.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Interactive Map:</strong> SVG-based 2D map with exhibition pins for building navigation.</p>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Visual Rebrand:</strong> Retained orange, introduced dark blue, refined typography, immersive photography for young adults.</p>
-
-      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
-      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4">Improved visit planning efficiency across all audience segments.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-        <div class="bg-[#E84393]/[0.06] border border-[#E84393]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-2xl text-[#E84393] mb-1">STEVIE</div>
-          <div class="text-xs text-muted">2018 Best UX Award</div>
+    <!-- Adelphi Digital -->
+    <div class="gsap-reveal flavor-adelphi relative py-16 px-8 bg-adelphi-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div class="lg:sticky lg:top-[calc(64px+2rem)]">
+          <div class="w-14 h-14 rounded-full bg-adelphi/[0.12] flex items-center justify-center mb-4">
+            <i data-lucide="monitor" class="w-7 h-7 text-adelphi"></i>
+          </div>
+          <h3 class="font-display text-2xl font-bold leading-tight text-adelphi mb-2">Adelphi Digital</h3>
+          <p class="font-display text-sm italic text-text-faint mb-3">Acquired by EY</p>
+          <p class="text-sm font-semibold text-text mb-1">UI/UX Designer</p>
+          <p class="text-xs text-text-faint leading-relaxed">Jan 2017 &ndash; Oct 2018 &middot; 1 yr 10 mos<br>Singapore</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-adelphi/[0.1] text-adelphi border border-adelphi/20">Digital Agency</span>
         </div>
-        <div class="bg-[#E84393]/[0.06] border border-[#E84393]/15 rounded-xl p-5 text-center">
-          <div class="font-display text-3xl text-[#E84393] mb-1">6mo</div>
-          <div class="text-xs text-muted">Project Duration</div>
+        <div>
+          <p class="font-display text-lg italic text-adelphi/70 mb-4 leading-relaxed">User-centered design before the EY acquisition</p>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">User-Centered Design:</strong> Focused on User-Centered Design and Interaction Design prior to the company's rebranding to EY Digital.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Focusing on User-Centered Design and Interaction Design at Adelphi Digital, a digital agency later acquired by EY')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
 
-<!-- ==================== EXPERIENCE ==================== -->
-<section id="experience" class="py-24">
-  <div class="max-w-[1200px] mx-auto px-8 pb-10 gsap-reveal">
-    <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3">Experience</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-ink mb-4">Where I've designed</h2>
-    <p class="text-base text-muted max-w-xl leading-relaxed">Click "Learn more" on any achievement to explore the deeper story behind it.</p>
-  </div>
-
-  <!-- TCG Unite -->
-  <div class="gsap-reveal flavor-tcg relative py-16 px-8 bg-tcg-bg overflow-hidden">
-    <div class="exp-accent"></div>
-    <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
-      <div class="lg:sticky lg:top-[calc(72px+2rem)]">
-        <div class="w-14 h-14 rounded-full bg-tcg/[0.08] flex items-center justify-center mb-4">
-          <i data-lucide="gamepad-2" class="w-7 h-7 text-tcg"></i>
+    <!-- Comwerks Interactive -->
+    <div class="gsap-reveal flavor-comwerks relative py-16 px-8 bg-comwerks-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div class="lg:sticky lg:top-[calc(64px+2rem)]">
+          <div class="w-14 h-14 rounded-full bg-comwerks/[0.12] flex items-center justify-center mb-4">
+            <i data-lucide="code" class="w-7 h-7 text-comwerks"></i>
+          </div>
+          <h3 class="font-display text-2xl font-bold leading-tight text-comwerks mb-2">Comwerks Interactive</h3>
+          <p class="text-sm font-semibold text-text mb-1">Digital Developer</p>
+          <p class="text-xs text-text-faint leading-relaxed">May 2013 &ndash; Aug 2013 &middot; 4 mos<br>Singapore</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-mono font-medium tracking-wide uppercase bg-comwerks/[0.1] text-comwerks border border-comwerks/20">Development &middot; Agency</span>
         </div>
-        <h3 class="font-display text-2xl font-normal leading-tight text-tcg mb-2">TCG Unite</h3>
-        <p class="text-sm font-semibold text-ink mb-1">Senior Product Designer</p>
-        <p class="text-xs text-muted leading-relaxed">Jul 2024 &ndash; Oct 2025 &middot; 1 yr 4 mos<br>Singapore &middot; Hybrid/Contract</p>
-        <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-tcg/[0.08] text-tcg border border-tcg/20">FinTech &middot; TCG</span>
-      </div>
-      <div>
-        <p class="font-display text-lg italic text-tcg/80 mb-4 leading-relaxed">Designing a mobile Trading Card Game app from the ground up</p>
-        <ul class="exp-list list-none space-y-4">
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">Mobile App Design:</strong> Led the interface and experience design for a mobile Trading Card Game (TCG) app from the ground up.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Leading the interface and experience design for a mobile Trading Card Game app, designing all screens and interactions from scratch for a FinTech/gaming startup')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">Senior Design Leadership:</strong> Managed both contract and full-time senior design responsibilities focused on mobile interface and UI design.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Managing both contract and full-time senior product design responsibilities, focusing on mobile interface design and UI patterns for a TCG app')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- A5tec / Feisiong Group -->
-  <div class="gsap-reveal flavor-a5tec relative py-16 px-8 bg-a5tec-bg overflow-hidden">
-    <div class="exp-accent"></div>
-    <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
-      <div class="lg:sticky lg:top-[calc(72px+2rem)]">
-        <div class="w-14 h-14 rounded-full bg-a5tec/[0.08] flex items-center justify-center mb-4">
-          <i data-lucide="utensils" class="w-7 h-7 text-a5tec"></i>
+        <div>
+          <p class="font-display text-lg italic text-comwerks/70 mb-4 leading-relaxed">Front-end development for leading global brands</p>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">Front-end Development:</strong> Assisted in front-end development for microsites, Flash applications, and EDMs.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Front-end development for microsites, Flash applications, and EDMs at a digital agency')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-text-dim">
+              <strong class="text-text">Client Management:</strong> Managed content population for clients including Microsoft, 3M, Xbox, and Ponds.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-text-faint bg-bg-elevated rounded-full border border-stroke cursor-pointer hover:text-accent hover:bg-accent/10 hover:border-accent/30 align-middle" onclick="expandContext(this, 'Managing content for major global clients including Microsoft, 3M, Xbox, and Ponds at Comwerks Interactive')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-bg-surface rounded-xl text-sm leading-relaxed text-text-dim border-l-[3px] border-accent/30 hidden"></div>
+            </li>
+          </ul>
         </div>
-        <h3 class="font-display text-2xl font-normal leading-tight text-a5tec mb-2">A5tec</h3>
-        <p class="font-display text-sm italic text-muted mb-3">Feisiong Group Subsidiary</p>
-        <p class="text-sm font-semibold text-ink mb-1">Product Lead (Design)</p>
-        <p class="text-xs text-muted leading-relaxed">Jan 2022 &ndash; Oct 2023 &middot; 1 yr 10 mos<br>Singapore</p>
-        <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-a5tec/[0.08] text-a5tec border border-a5tec/20">F&amp;B &middot; Digital Products</span>
-      </div>
-      <div>
-        <p class="font-display text-lg italic text-a5tec/80 mb-4 leading-relaxed">Driving end-to-end product development for digital F&amp;B products</p>
-        <ul class="exp-list list-none space-y-4">
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">Product Development:</strong> Drove the end-to-end product development lifecycle for digital F&amp;B products.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Driving end-to-end product development lifecycle for digital F&B products at A5tec, a subsidiary of Feisiong Group')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">Stakeholder Collaboration:</strong> Collaborated with stakeholders to define product strategy and gather requirements.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Collaborating with stakeholders to define product strategy and gather requirements for digital F&B products')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">UI/UX Design:</strong> Designed low and high-fidelity screens based on user research.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Designing low and high-fidelity screens based on user research for F&B digital products')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">Agile Implementation:</strong> Implemented Agile methodologies, including regular sprint reviews and manual QA testing.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Implementing Agile methodologies including sprint reviews and manual QA testing for F&B product development')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">Design Ops:</strong> Spearheaded Design Ops and educated cross-functional teams on Figma best practices.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Spearheading Design Ops at A5tec, educating cross-functional teams on Figma best practices and design system governance')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-        </ul>
       </div>
     </div>
-  </div>
 
-  <!-- Career Break -->
-  <div class="gsap-reveal relative py-12 px-8 bg-cream-dark/50 overflow-hidden">
-    <div class="max-w-[1200px] mx-auto flex items-center gap-6">
-      <div class="w-12 h-12 rounded-full bg-muted/[0.08] flex items-center justify-center flex-shrink-0">
-        <i data-lucide="heart" class="w-6 h-6 text-muted"></i>
-      </div>
-      <div>
-        <h3 class="font-display text-xl font-normal text-muted mb-1">Career Break</h3>
-        <p class="text-sm text-muted">Apr 2021 &ndash; Dec 2021 &middot; 9 mos &middot; Health and well-being</p>
-        <p class="text-xs text-muted mt-1">Focused on rest while maintaining select freelance projects.</p>
-      </div>
-    </div>
-  </div>
+  </section>
 
-  <!-- EY (Ernst & Young) -->
-  <div class="gsap-reveal flavor-ey relative py-16 px-8 bg-ey-bg overflow-hidden">
-    <div class="exp-accent"></div>
-    <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
-      <div class="lg:sticky lg:top-[calc(72px+2rem)]">
-        <div class="w-14 h-14 rounded-full bg-ey/[0.08] flex items-center justify-center mb-4">
-          <i data-lucide="building-2" class="w-7 h-7 text-ey"></i>
-        </div>
-        <h3 class="font-display text-2xl font-normal leading-tight text-ey mb-2">EY (Ernst &amp; Young)</h3>
-        <p class="text-sm font-semibold text-ink mb-1">UI/UX Designer</p>
-        <p class="text-xs text-muted leading-relaxed">Oct 2018 &ndash; Apr 2021 &middot; 2 yrs 7 mos<br>Singapore &middot; Hybrid</p>
-        <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-ey/[0.08] text-ey border border-ey/20">Consultancy &middot; Digital Transformation</span>
-      </div>
-      <div>
-        <p class="font-display text-lg italic text-ey/80 mb-4 leading-relaxed">Leading UI/UX design for strategic accounts across industries</p>
-        <ul class="exp-list list-none space-y-4">
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">Strategic Accounts:</strong> Led UI/UX design for strategic accounts, facilitating digital transformation across various industries.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Leading UI/UX design at EY for strategic accounts, facilitating digital transformation across multiple industries in Singapore')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">User Research:</strong> Assisted in user research, including stakeholder interviews and workshops.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Conducting user research at EY including stakeholder interviews and workshops for digital transformation projects')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Adelphi Digital -->
-  <div class="gsap-reveal flavor-adelphi relative py-16 px-8 bg-adelphi-bg overflow-hidden">
-    <div class="exp-accent"></div>
-    <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
-      <div class="lg:sticky lg:top-[calc(72px+2rem)]">
-        <div class="w-14 h-14 rounded-full bg-adelphi/[0.08] flex items-center justify-center mb-4">
-          <i data-lucide="monitor" class="w-7 h-7 text-adelphi"></i>
-        </div>
-        <h3 class="font-display text-2xl font-normal leading-tight text-adelphi mb-2">Adelphi Digital</h3>
-        <p class="font-display text-sm italic text-muted mb-3">Acquired by EY</p>
-        <p class="text-sm font-semibold text-ink mb-1">UI/UX Designer</p>
-        <p class="text-xs text-muted leading-relaxed">Jan 2017 &ndash; Oct 2018 &middot; 1 yr 10 mos<br>Singapore</p>
-        <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-adelphi/[0.08] text-adelphi border border-adelphi/20">Digital Agency</span>
-      </div>
-      <div>
-        <p class="font-display text-lg italic text-adelphi/80 mb-4 leading-relaxed">User-centered design before the EY acquisition</p>
-        <ul class="exp-list list-none space-y-4">
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">User-Centered Design:</strong> Focused on User-Centered Design and Interaction Design prior to the company's rebranding to EY Digital.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Focusing on User-Centered Design and Interaction Design at Adelphi Digital, a digital agency later acquired by EY')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Comwerks Interactive -->
-  <div class="gsap-reveal flavor-comwerks relative py-16 px-8 bg-comwerks-bg overflow-hidden">
-    <div class="exp-accent"></div>
-    <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
-      <div class="lg:sticky lg:top-[calc(72px+2rem)]">
-        <div class="w-14 h-14 rounded-full bg-comwerks/[0.08] flex items-center justify-center mb-4">
-          <i data-lucide="code" class="w-7 h-7 text-comwerks"></i>
-        </div>
-        <h3 class="font-display text-2xl font-normal leading-tight text-comwerks mb-2">Comwerks Interactive</h3>
-        <p class="text-sm font-semibold text-ink mb-1">Digital Developer</p>
-        <p class="text-xs text-muted leading-relaxed">May 2013 &ndash; Aug 2013 &middot; 4 mos<br>Singapore</p>
-        <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-comwerks/[0.08] text-comwerks border border-comwerks/20">Development &middot; Agency</span>
-      </div>
-      <div>
-        <p class="font-display text-lg italic text-comwerks/80 mb-4 leading-relaxed">Front-end development for leading global brands</p>
-        <ul class="exp-list list-none space-y-4">
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">Front-end Development:</strong> Assisted in front-end development for microsites, Flash applications, and EDMs.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Front-end development for microsites, Flash applications, and EDMs at a digital agency')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-          <li class="relative pl-6 text-[0.92rem] leading-relaxed text-ink-light">
-            <strong class="text-ink">Client Management:</strong> Managed content population for clients including Microsoft, 3M, Xbox, and Ponds.
-            <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-accent hover:bg-accent-pale align-middle" onclick="expandContext(this, 'Managing content for major global clients including Microsoft, 3M, Xbox, and Ponds at Comwerks Interactive')">Learn more</button>
-            <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-ink-light border-l-[3px] border-sand hidden"></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-
-<!-- ==================== EDUCATION ==================== -->
-<section id="education" class="py-24 px-8 max-w-[1200px] mx-auto">
-  <div class="gsap-reveal">
-    <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3">Education</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-ink mb-10">Academic foundation</h2>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div class="gsap-reveal edu-card relative bg-white border border-border-custom rounded-2xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <h3 class="font-display text-xl text-ink mb-1">Nanyang Technological University</h3>
-      <p class="text-sm text-ink-light mb-1">Bachelor of Fine Arts (B.F.A.), Art, Design & Media (Interactive Media)</p>
-      <p class="text-xs text-muted mb-4">Second Class (Upper) Honours</p>
-      <div class="text-sm text-ink-light leading-relaxed">
-        <p>Specialized in Interactive Media, combining fine arts sensibility with digital design and technology.</p>
-      </div>
-    </div>
-    <div class="gsap-reveal edu-card relative bg-white border border-border-custom rounded-2xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <h3 class="font-display text-xl text-ink mb-1">Nanyang Polytechnic</h3>
-      <p class="text-sm text-ink-light mb-1">Diploma, Digital Media Design (Interaction Design)</p>
-      <p class="text-xs text-muted mb-4">Merit</p>
-      <div class="text-sm text-ink-light leading-relaxed">
-        <p>Four-time Director's List recipient (2010–2012). Focused on interaction design fundamentals.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== CERTIFICATIONS ==================== -->
-<section class="py-8 pb-16 px-8 max-w-[1200px] mx-auto">
-  <div class="gsap-reveal">
-    <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3">Certifications</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-ink mb-8">Continuous learning</h2>
-  </div>
-  <div class="gsap-reveal flex flex-wrap gap-3">
-    <span class="px-4 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-ink-light transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-accent cursor-default">Data-Driven Design: Quantitative UX Research <span class="text-muted text-xs ml-1">IxDF · 2024</span></span>
-    <span class="px-4 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-ink-light transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-accent cursor-default">Mobile UX Design <span class="text-muted text-xs ml-1">IxDF · 2024</span></span>
-    <span class="px-4 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-ink-light transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-accent cursor-default">Mobile UI Design <span class="text-muted text-xs ml-1">IxDF · 2024</span></span>
-    <span class="px-4 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-ink-light transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-accent cursor-default">IxDF Membership <span class="text-muted text-xs ml-1">IxDF · 2024</span></span>
-    <span class="px-4 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-ink-light transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-accent cursor-default">EY Digital Bronze <span class="text-muted text-xs ml-1">EY · 2020</span></span>
-  </div>
-</section>
-
-<!-- ==================== SKILLS ==================== -->
-<section class="py-8 pb-24 px-8 max-w-[1200px] mx-auto">
-  <div class="gsap-reveal">
-    <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3">Skills</p>
-    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-ink mb-8">Technical toolkit</h2>
-  </div>
-  <div class="gsap-reveal space-y-6">
-    <div>
-      <p class="text-xs font-semibold tracking-[0.1em] uppercase text-accent mb-3">Design</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1.5 bg-accent/[0.06] text-accent text-sm rounded-lg font-medium">Product Design</span>
-        <span class="px-3 py-1.5 bg-accent/[0.06] text-accent text-sm rounded-lg font-medium">UI/UX Design</span>
-        <span class="px-3 py-1.5 bg-accent/[0.06] text-accent text-sm rounded-lg font-medium">Mobile Interface Design</span>
-        <span class="px-3 py-1.5 bg-accent/[0.06] text-accent text-sm rounded-lg font-medium">User-Centered Design</span>
-        <span class="px-3 py-1.5 bg-accent/[0.06] text-accent text-sm rounded-lg font-medium">Wireframing</span>
-        <span class="px-3 py-1.5 bg-accent/[0.06] text-accent text-sm rounded-lg font-medium">Interaction Design</span>
-      </div>
-    </div>
-    <div>
-      <p class="text-xs font-semibold tracking-[0.1em] uppercase text-sand mb-3">Process</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1.5 bg-sand/[0.1] text-sand text-sm rounded-lg font-medium">Product Management</span>
-        <span class="px-3 py-1.5 bg-sand/[0.1] text-sand text-sm rounded-lg font-medium">Product Lifecycle</span>
-        <span class="px-3 py-1.5 bg-sand/[0.1] text-sand text-sm rounded-lg font-medium">Agile Methodologies</span>
-        <span class="px-3 py-1.5 bg-sand/[0.1] text-sand text-sm rounded-lg font-medium">User Research</span>
-        <span class="px-3 py-1.5 bg-sand/[0.1] text-sand text-sm rounded-lg font-medium">Usability Testing</span>
-        <span class="px-3 py-1.5 bg-sand/[0.1] text-sand text-sm rounded-lg font-medium">Design Ops</span>
-      </div>
-    </div>
-    <div>
-      <p class="text-xs font-semibold tracking-[0.1em] uppercase text-ink-light mb-3">Tools</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1.5 bg-ink/[0.04] text-ink-light text-sm rounded-lg font-medium">Figma</span>
-        <span class="px-3 py-1.5 bg-ink/[0.04] text-ink-light text-sm rounded-lg font-medium">Adobe Illustrator</span>
-        <span class="px-3 py-1.5 bg-ink/[0.04] text-ink-light text-sm rounded-lg font-medium">jQuery</span>
-        <span class="px-3 py-1.5 bg-ink/[0.04] text-ink-light text-sm rounded-lg font-medium">MySQL</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== FIT ASSESSMENT ==================== -->
-<section id="fit" class="fit-glow relative bg-ink text-cream py-20 px-8 overflow-hidden">
-  <div class="max-w-3xl mx-auto relative z-[1]">
+  <!-- ==================== EDUCATION ==================== -->
+  <section id="education" class="py-24 px-8 max-w-[1200px] mx-auto">
     <div class="gsap-reveal">
-      <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-sand mb-3">Fit Assessment</p>
-      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-cream mb-4">Am I the right fit for your role?</h2>
-      <p class="text-base text-cream/60 max-w-xl leading-relaxed mb-10">Paste a job description below and I'll give you an honest take on how my design experience lines up — including where I'd shine and where there might be gaps.</p>
+      <p class="section-label text-accent mb-4">04 / Education</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text mb-10">Academic foundation</h2>
     </div>
-    <div class="gsap-reveal">
-      <textarea id="fitTextarea" placeholder="Paste the job description here..." class="w-full min-h-[160px] p-5 bg-white/[0.07] border border-white/[0.15] rounded-2xl text-cream font-body text-sm leading-relaxed resize-y transition-all duration-300 placeholder:text-cream/35 focus:outline-none focus:border-accent focus:bg-white/10"></textarea>
-      <div class="flex justify-between items-center mt-4">
-        <span class="text-xs text-cream/40">Powered by AI · Grounded in my real experience</span>
-        <button id="fitBtn" onclick="assessFit()" class="px-8 py-3 bg-accent text-cream font-body text-sm font-semibold tracking-wide rounded-full border-none cursor-pointer transition-all duration-300 hover:bg-accent-light hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0">Assess Fit</button>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="gsap-reveal edu-card relative bg-bg-elevated border border-stroke rounded-2xl p-8 overflow-hidden">
+        <h3 class="font-display text-xl font-semibold text-text mb-1">Nanyang Technological University</h3>
+        <p class="text-sm text-text-dim mb-1">Bachelor of Fine Arts (B.F.A.), Art, Design & Media (Interactive Media)</p>
+        <p class="text-xs text-text-faint mb-4">Second Class (Upper) Honours</p>
+        <div class="text-sm text-text-dim leading-relaxed">
+          <p>Specialized in Interactive Media, combining fine arts sensibility with digital design and technology.</p>
+        </div>
       </div>
-      <div id="fitResult" class="hidden mt-8 p-6 bg-white/[0.05] border border-white/10 rounded-2xl text-sm leading-relaxed text-cream/85"></div>
+      <div class="gsap-reveal edu-card relative bg-bg-elevated border border-stroke rounded-2xl p-8 overflow-hidden">
+        <h3 class="font-display text-xl font-semibold text-text mb-1">Nanyang Polytechnic</h3>
+        <p class="text-sm text-text-dim mb-1">Diploma, Digital Media Design (Interaction Design)</p>
+        <p class="text-xs text-text-faint mb-4">Merit</p>
+        <div class="text-sm text-text-dim leading-relaxed">
+          <p>Four-time Director's List recipient (2010–2012). Focused on interaction design fundamentals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CERTIFICATIONS ==================== -->
+  <section class="py-8 pb-16 px-8 max-w-[1200px] mx-auto">
+    <div class="gsap-reveal">
+      <p class="section-label text-accent mb-4">05 / Certifications</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text mb-8">Continuous learning</h2>
+    </div>
+    <div class="gsap-reveal flex flex-wrap gap-3">
+      <span class="cert-pill px-4 py-2 bg-bg-elevated border border-stroke rounded-full text-sm font-medium text-text-dim cursor-default">Data-Driven Design: Quantitative UX Research <span class="text-text-faint text-xs ml-1">IxDF &middot; 2024</span></span>
+      <span class="cert-pill px-4 py-2 bg-bg-elevated border border-stroke rounded-full text-sm font-medium text-text-dim cursor-default">Mobile UX Design <span class="text-text-faint text-xs ml-1">IxDF &middot; 2024</span></span>
+      <span class="cert-pill px-4 py-2 bg-bg-elevated border border-stroke rounded-full text-sm font-medium text-text-dim cursor-default">Mobile UI Design <span class="text-text-faint text-xs ml-1">IxDF &middot; 2024</span></span>
+      <span class="cert-pill px-4 py-2 bg-bg-elevated border border-stroke rounded-full text-sm font-medium text-text-dim cursor-default">IxDF Membership <span class="text-text-faint text-xs ml-1">IxDF &middot; 2024</span></span>
+      <span class="cert-pill px-4 py-2 bg-bg-elevated border border-stroke rounded-full text-sm font-medium text-text-dim cursor-default">EY Digital Bronze <span class="text-text-faint text-xs ml-1">EY &middot; 2020</span></span>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section class="py-8 pb-24 px-8 max-w-[1200px] mx-auto">
+    <div class="gsap-reveal">
+      <p class="section-label text-accent mb-4">06 / Skills</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text mb-8">Technical toolkit</h2>
+    </div>
+    <div class="gsap-reveal space-y-6">
+      <div>
+        <p class="text-xs font-mono font-semibold tracking-[0.15em] uppercase text-accent mb-3">Design</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 bg-accent/[0.08] text-accent text-sm rounded-lg font-medium">Product Design</span>
+          <span class="px-3 py-1.5 bg-accent/[0.08] text-accent text-sm rounded-lg font-medium">UI/UX Design</span>
+          <span class="px-3 py-1.5 bg-accent/[0.08] text-accent text-sm rounded-lg font-medium">Mobile Interface Design</span>
+          <span class="px-3 py-1.5 bg-accent/[0.08] text-accent text-sm rounded-lg font-medium">User-Centered Design</span>
+          <span class="px-3 py-1.5 bg-accent/[0.08] text-accent text-sm rounded-lg font-medium">Wireframing</span>
+          <span class="px-3 py-1.5 bg-accent/[0.08] text-accent text-sm rounded-lg font-medium">Interaction Design</span>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-mono font-semibold tracking-[0.15em] uppercase text-[#F2C94C] mb-3">Process</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 bg-[#F2C94C]/[0.08] text-[#F2C94C] text-sm rounded-lg font-medium">Product Management</span>
+          <span class="px-3 py-1.5 bg-[#F2C94C]/[0.08] text-[#F2C94C] text-sm rounded-lg font-medium">Product Lifecycle</span>
+          <span class="px-3 py-1.5 bg-[#F2C94C]/[0.08] text-[#F2C94C] text-sm rounded-lg font-medium">Agile Methodologies</span>
+          <span class="px-3 py-1.5 bg-[#F2C94C]/[0.08] text-[#F2C94C] text-sm rounded-lg font-medium">User Research</span>
+          <span class="px-3 py-1.5 bg-[#F2C94C]/[0.08] text-[#F2C94C] text-sm rounded-lg font-medium">Usability Testing</span>
+          <span class="px-3 py-1.5 bg-[#F2C94C]/[0.08] text-[#F2C94C] text-sm rounded-lg font-medium">Design Ops</span>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-mono font-semibold tracking-[0.15em] uppercase text-text-dim mb-3">Tools</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 bg-text/[0.05] text-text-dim text-sm rounded-lg font-medium">Figma</span>
+          <span class="px-3 py-1.5 bg-text/[0.05] text-text-dim text-sm rounded-lg font-medium">Adobe Illustrator</span>
+          <span class="px-3 py-1.5 bg-text/[0.05] text-text-dim text-sm rounded-lg font-medium">jQuery</span>
+          <span class="px-3 py-1.5 bg-text/[0.05] text-text-dim text-sm rounded-lg font-medium">MySQL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FIT ASSESSMENT ==================== -->
+  <section id="fit" class="relative bg-accent text-bg py-20 px-8 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(0,0,0,0.15),transparent_60%)]"></div>
+    <div class="max-w-3xl mx-auto relative z-[1]">
+      <div class="gsap-reveal">
+        <p class="font-mono text-xs font-medium tracking-[0.2em] uppercase text-white/60 mb-4">07 / Fit Assessment</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">Am I the right fit?</h2>
+        <p class="text-base text-white/70 max-w-xl leading-relaxed mb-10">Paste a job description below and I'll give you an honest take on how my design experience lines up — including where I'd shine and where there might be gaps.</p>
+      </div>
+      <div class="gsap-reveal">
+        <textarea id="fitTextarea" placeholder="Paste the job description here..." class="w-full min-h-[160px] p-5 bg-black/20 border border-white/20 rounded-2xl text-white font-body text-sm leading-relaxed resize-y transition-all duration-300 placeholder:text-white/30 focus:outline-none focus:border-white/50 focus:bg-black/30"></textarea>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-xs text-white/40 font-mono">Powered by AI &middot; Grounded in real experience</span>
+          <button id="fitBtn" onclick="assessFit()" class="px-8 py-3 bg-white text-accent font-body text-sm font-bold tracking-wide rounded-full border-none cursor-pointer transition-all duration-300 hover:bg-bg hover:-translate-y-0.5 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0">Assess Fit</button>
+        </div>
+        <div id="fitResult" class="hidden mt-8 p-6 bg-black/20 border border-white/15 rounded-2xl text-sm leading-relaxed text-white/85"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 px-8 text-center border-t border-stroke">
+    <p class="font-display text-xl font-bold text-text mb-1">Wing Tong Leong</p>
+    <div class="flex items-center justify-center gap-2 mb-2">
+      <i data-lucide="pen-tool" class="w-4 h-4 text-accent"></i>
+    </div>
+    <p class="text-xs text-text-faint font-mono">Product Designer &middot; Singapore</p>
+    <p class="text-xs text-text-faint font-mono mt-2">Leong Wing Tong &copy; 2026</p>
+  </footer>
+
+  <!-- ==================== AI CHAT WIDGET ==================== -->
+  <button id="chatFab" onclick="toggleChat()" title="Ask me anything" aria-label="Open chat" class="fixed bottom-8 right-8 w-[60px] h-[60px] rounded-full bg-accent text-white border-none cursor-pointer flex items-center justify-center shadow-[0_6px_24px_rgba(255,99,71,0.35)] z-[999] transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_30px_rgba(255,99,71,0.5)]">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+  </button>
+
+  <div id="chatPanel" role="complementary" aria-label="Chat with Wing Tong" class="fixed bottom-[6.5rem] right-8 w-[400px] max-h-[550px] bg-bg-elevated rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-stroke z-[998] flex flex-col overflow-hidden opacity-0 translate-y-5 scale-95 pointer-events-none transition-all duration-350 max-md:right-3 max-md:left-3 max-md:w-auto max-md:bottom-[5.5rem] max-md:max-h-[70vh]" style="transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);">
+    <div class="px-6 py-5 bg-accent text-white flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
+        <i data-lucide="pen-tool" class="w-4 h-4 text-white"></i>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold mb-0.5">Wing Tong Leong</h4>
+      </div>
+    </div>
+    <div id="chatMessages" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3 min-h-[300px] max-h-[380px] bg-bg-surface">
+      <div class="chat-msg-bot max-w-[85%] px-4 py-3 rounded-2xl rounded-bl-sm text-sm leading-relaxed bg-bg-elevated text-text border border-stroke self-start">Hi! I'm Wing Tong — a product designer with a love for clean, purposeful interfaces. Ask me anything about my design process, experience, or projects!</div>
+    </div>
+    <div class="px-3 py-2 flex gap-2 justify-center bg-bg-elevated/50 border-t border-stroke">
+      <a href="mailto:leongwingtong@gmail.com" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.7rem] font-semibold bg-accent/10 text-accent border border-accent/20 transition-all duration-300 hover:bg-accent hover:text-white no-underline">
+        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+        Email
+      </a>
+      <a href="https://www.linkedin.com/in/wing-tong-leong/" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.7rem] font-semibold bg-[#0A66C2]/10 text-[#0A66C2] border border-[#0A66C2]/20 transition-all duration-300 hover:bg-[#0A66C2] hover:text-white no-underline">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://wa.me/6592709783" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.7rem] font-semibold bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 transition-all duration-300 hover:bg-[#25D366] hover:text-white no-underline">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://t.me/+6592709783" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.7rem] font-semibold bg-[#26A5E4]/10 text-[#26A5E4] border border-[#26A5E4]/20 transition-all duration-300 hover:bg-[#26A5E4] hover:text-white no-underline">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Telegram
+      </a>
+    </div>
+    <div class="px-4 py-3 border-t border-stroke flex gap-2 bg-bg-elevated">
+      <input id="chatInput" type="text" placeholder="Ask about my experience..." onkeydown="if(event.key==='Enter')sendChat()" class="flex-1 px-4 py-2.5 border border-stroke rounded-full font-body text-sm bg-bg-surface text-text transition-all focus:outline-none focus:border-accent placeholder:text-text-faint">
+      <button id="chatSend" onclick="sendChat()" aria-label="Send message" class="w-10 h-10 rounded-full bg-accent text-white border-none cursor-pointer flex items-center justify-center transition-all duration-300 flex-shrink-0 hover:bg-accent-muted disabled:opacity-40 disabled:cursor-not-allowed">
+        <i data-lucide="send" class="w-4 h-4"></i>
+      </button>
     </div>
   </div>
-</section>
 
-<!-- ==================== FOOTER ==================== -->
-<footer class="py-12 px-8 text-center border-t border-border-custom">
-  <p class="font-display text-xl text-ink mb-1">Wing Tong Leong</p>
-  <div class="flex items-center justify-center gap-2 mb-2">
-    <i data-lucide="pen-tool" class="w-4 h-4 text-accent"></i>
-  </div>
-  <p class="text-xs text-muted">Product Designer · Singapore</p>
-  <p class="text-xs text-muted mt-2">Leong Wing Tong &copy; 2026</p>
-</footer>
-
-<!-- ==================== AI CHAT WIDGET ==================== -->
-<button id="chatFab" onclick="toggleChat()" title="Ask me anything" aria-label="Open chat" class="fixed bottom-8 right-8 w-[60px] h-[60px] rounded-full bg-accent text-cream border-none cursor-pointer flex items-center justify-center shadow-[0_6px_24px_rgba(0,82,163,0.35)] z-[999] transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_30px_rgba(0,82,163,0.5)]">
-  <i data-lucide="message-circle" class="w-6 h-6"></i>
-</button>
-
-<div id="chatPanel" role="complementary" aria-label="Chat with Wing Tong" class="fixed bottom-[6.5rem] right-8 w-[400px] max-h-[550px] bg-white rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] z-[998] flex flex-col overflow-hidden opacity-0 translate-y-5 scale-95 pointer-events-none transition-all duration-350 max-md:right-3 max-md:left-3 max-md:w-auto max-md:bottom-[5.5rem] max-md:max-h-[70vh]" style="transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);">
-  <div class="px-6 py-5 bg-ink text-cream flex items-center gap-3">
-    <div class="w-9 h-9 rounded-full bg-accent/20 flex items-center justify-center">
-      <i data-lucide="pen-tool" class="w-4 h-4 text-accent-light"></i>
-    </div>
-    <div>
-      <h4 class="text-sm font-semibold mb-0.5">Wing Tong Leong</h4>
-    </div>
-  </div>
-  <div id="chatMessages" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3 min-h-[300px] max-h-[380px] bg-cream">
-    <div class="chat-msg-bot max-w-[85%] px-4 py-3 rounded-2xl rounded-bl-sm text-sm leading-relaxed bg-white text-ink border border-border-custom self-start">Hi! I'm Wing Tong — a product designer with a love for clean, purposeful interfaces. Ask me anything about my design process, experience, or projects!</div>
-  </div>
-  <div class="px-3 py-2 flex gap-2 justify-center bg-cream/50 border-t border-border-custom">
-    <a href="mailto:leongwingtong@gmail.com" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.7rem] font-semibold bg-accent/10 text-accent border border-accent/20 transition-all duration-300 hover:bg-accent hover:text-white no-underline">
-      <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-      Email
-    </a>
-    <a href="https://www.linkedin.com/in/wing-tong-leong/" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.7rem] font-semibold bg-[#0A66C2]/10 text-[#0A66C2] border border-[#0A66C2]/20 transition-all duration-300 hover:bg-[#0A66C2] hover:text-white no-underline">
-      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      LinkedIn
-    </a>
-  </div>
-  <div class="px-4 py-3 border-t border-border-custom flex gap-2 bg-white">
-    <input id="chatInput" type="text" placeholder="Ask about my experience..." onkeydown="if(event.key==='Enter')sendChat()" class="flex-1 px-4 py-2.5 border border-border-custom rounded-full font-body text-sm bg-cream text-ink transition-all focus:outline-none focus:border-accent placeholder:text-muted">
-    <button id="chatSend" onclick="sendChat()" aria-label="Send message" class="w-10 h-10 rounded-full bg-accent text-cream border-none cursor-pointer flex items-center justify-center transition-all duration-300 flex-shrink-0 hover:bg-ink disabled:opacity-40 disabled:cursor-not-allowed">
-      <i data-lucide="send" class="w-4 h-4"></i>
+  <!-- ==================== IMAGE LIGHTBOX ==================== -->
+  <div id="lightbox" class="fixed inset-0 z-[3000] bg-black/90 backdrop-blur-md flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 cursor-zoom-out" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" aria-label="Close" class="absolute top-4 right-6 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white/70 hover:bg-white/20 hover:text-white transition-all duration-300 cursor-pointer">
+      <i data-lucide="x" class="w-5 h-5"></i>
     </button>
+    <img id="lightboxImg" src="" alt="" class="max-w-[90vw] max-h-[85vh] object-contain rounded-lg shadow-2xl scale-90 transition-transform duration-300" onclick="event.stopPropagation()">
+    <p id="lightboxCaption" class="text-sm text-white/50 font-mono mt-4 text-center px-4"></p>
   </div>
-</div>
 
-
-    <!-- ==================== SCRIPTS ==================== -->
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="js/projects-data.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

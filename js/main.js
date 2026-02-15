@@ -75,9 +75,9 @@ IMPORTANT GUIDELINES:
 // ====== GSAP ANIMATIONS ======
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero entrance: set initial hidden state, then animate in
+// Hero entrance
 gsap.set('.hero-child', { y: 30, opacity: 0 });
-gsap.set('#heroVisual', { x: 50, opacity: 0 });
+gsap.set('#heroVisual', { scale: 0.9, opacity: 0 });
 gsap.set('#scrollIndicator', { y: 20, opacity: 0 });
 
 const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
@@ -89,7 +89,7 @@ heroTl
     stagger: 0.15,
   })
   .to('#heroVisual', {
-    x: 0,
+    scale: 1,
     opacity: 1,
     duration: 1,
   }, '-=0.6')
@@ -99,7 +99,7 @@ heroTl
     duration: 0.6,
   }, '-=0.4');
 
-// Scroll-triggered reveal for all .gsap-reveal elements
+// Scroll-triggered reveal
 gsap.utils.toArray('.gsap-reveal').forEach((el) => {
   gsap.fromTo(el,
     { y: 40, opacity: 0 },
@@ -125,18 +125,6 @@ ScrollTrigger.create({
   once: true,
 });
 
-// Parallax on hero background shape
-gsap.to('.animate-morph', {
-  y: -80,
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '.animate-morph',
-    start: 'top top',
-    end: 'bottom top',
-    scrub: 1,
-  },
-});
-
 // ====== CURSOR GLOW ON EXPERIENCE SECTIONS ======
 document.querySelectorAll('.flavor-tcg, .flavor-a5tec, .flavor-ey, .flavor-adelphi, .flavor-comwerks').forEach(section => {
   const glow = document.createElement('div');
@@ -144,13 +132,12 @@ document.querySelectorAll('.flavor-tcg, .flavor-a5tec, .flavor-ey, .flavor-adelp
   glow.style.cssText = 'position:absolute;width:300px;height:300px;border-radius:50%;pointer-events:none;opacity:0;transition:opacity 0.4s ease;z-index:0;';
   section.appendChild(glow);
 
-  // Pick the flavor color
   const colors = {
-    'flavor-tcg': 'rgba(108, 92, 231, 0.06)',
-    'flavor-a5tec': 'rgba(225, 112, 85, 0.06)',
-    'flavor-ey': 'rgba(45, 52, 54, 0.06)',
-    'flavor-adelphi': 'rgba(9, 132, 227, 0.06)',
-    'flavor-comwerks': 'rgba(0, 184, 148, 0.06)',
+    'flavor-tcg': 'rgba(108, 92, 231, 0.08)',
+    'flavor-a5tec': 'rgba(225, 112, 85, 0.08)',
+    'flavor-ey': 'rgba(242, 201, 76, 0.08)',
+    'flavor-adelphi': 'rgba(9, 132, 227, 0.08)',
+    'flavor-comwerks': 'rgba(0, 184, 148, 0.08)',
   };
 
   for (const [cls, color] of Object.entries(colors)) {
@@ -175,7 +162,7 @@ document.querySelectorAll('.flavor-tcg, .flavor-a5tec, .flavor-ey, .flavor-adelp
 // ====== NAVIGATION ======
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('border-border-custom', window.scrollY > 50);
+  nav.classList.toggle('border-stroke', window.scrollY > 50);
   nav.classList.toggle('border-transparent', window.scrollY <= 50);
 });
 
@@ -227,13 +214,71 @@ function animateCounters() {
 }
 
 // ====== PROJECT MODAL ======
+function renderProjectHTML(p) {
+  let html = '';
+
+  // Banner image
+  if (p.banner) {
+    html += `<div class="rounded-2xl overflow-hidden mb-8 -mx-2 cursor-zoom-in" onclick="openLightbox('${p.banner}','${p.title.replace(/'/g, "\\'")}')"><img src="${p.banner}" alt="${p.title}" class="w-full h-auto object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy"></div>`;
+  }
+
+  // Header
+  html += `<div class="h-1 w-20 rounded-full mb-8" style="background:${p.color}"></div>`;
+  html += `<p class="text-xs font-mono font-medium tracking-[0.15em] uppercase mb-3" style="color:${p.color}">${p.label}</p>`;
+  html += `<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-3">${p.title}</h2>`;
+  html += `<p class="text-sm text-text-faint mb-8">${p.subtitle}</p>`;
+
+  html += '<div class="prose max-w-none">';
+
+  // Sections
+  for (const sec of p.sections) {
+    html += `<h3 class="font-display text-xl font-semibold text-text mt-10 mb-3">${sec.heading}</h3>`;
+
+    if (sec.text) {
+      html += `<p class="text-[0.95rem] text-text-dim leading-relaxed mb-6">${sec.text}</p>`;
+    }
+
+    if (sec.items) {
+      for (const item of sec.items) {
+        html += `<p class="text-[0.95rem] text-text-dim leading-relaxed mb-4"><strong class="text-text">${item.bold}</strong> ${item.text}</p>`;
+      }
+    }
+
+    if (sec.images && sec.images.length) {
+      const cols = sec.images.length === 1 ? 1 : sec.images.length === 2 ? 2 : sec.images.length >= 4 ? 2 : 3;
+      html += `<div class="modal-grid grid gap-4 mt-6 mb-6" style="grid-template-columns:repeat(${cols},1fr)">`;
+      for (const img of sec.images) {
+        html += `<div class="rounded-xl overflow-hidden border border-stroke bg-bg-elevated aspect-[4/3] cursor-zoom-in" onclick="openLightbox('${img.src}','${img.alt.replace(/'/g, "\\'")}')"><img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy"></div>`;
+      }
+      html += '</div>';
+    }
+  }
+
+  // Metrics
+  if (p.metrics && p.metrics.length) {
+    html += '<h3 class="font-display text-xl font-semibold text-text mt-10 mb-3">Outcomes</h3>';
+    const metricCols = p.metrics.length <= 2 ? p.metrics.length : 3;
+    html += `<div class="modal-grid grid gap-4 mt-6" style="grid-template-columns:repeat(${metricCols},1fr)">`;
+    for (const m of p.metrics) {
+      const fontSize = m.small ? 'text-2xl' : 'text-3xl';
+      html += `<div class="rounded-xl p-5 text-center" style="background:${p.color}15;border:1px solid ${p.color}33">`;
+      html += `<div class="font-display ${fontSize} font-bold mb-1" style="color:${p.color}">${m.value}</div>`;
+      html += `<div class="text-xs text-text-faint">${m.label}</div></div>`;
+    }
+    html += '</div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
 function openProject(projectId) {
   const modal = document.getElementById('projectModal');
   const body = document.getElementById('projectModalBody');
-  const template = document.getElementById('project-' + projectId);
-  if (!template) return;
+  const project = PROJECTS[projectId];
+  if (!project) return;
 
-  body.innerHTML = template.innerHTML;
+  body.innerHTML = renderProjectHTML(project);
   lucide.createIcons({ nodes: [body] });
   modal.classList.remove('opacity-0', 'pointer-events-none');
   modal.querySelector('#projectModalContent').classList.remove('translate-y-8');
@@ -247,9 +292,12 @@ function closeProject() {
   document.body.style.overflow = '';
 }
 
-// Close on Escape
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeProject();
+  if (e.key === 'Escape') {
+    const lb = document.getElementById('lightbox');
+    if (lb && !lb.classList.contains('pointer-events-none')) return; // lightbox handles its own Escape
+    closeProject();
+  }
 });
 
 // ====== GEMINI API ======
@@ -289,7 +337,6 @@ async function callGemini(prompt, isChat = true) {
 
 // ====== MARKDOWN RENDERER ======
 function renderMarkdown(text) {
-  // Split into lines for block-level processing
   const lines = text.split('\n');
   let html = '';
   let inList = false;
@@ -297,7 +344,6 @@ function renderMarkdown(text) {
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i];
 
-    // Headings
     if (line.match(/^##\s+(.+)/)) {
       if (inList) { html += '</ul>'; inList = false; }
       const heading = line.replace(/^##\s+/, '');
@@ -305,7 +351,6 @@ function renderMarkdown(text) {
       continue;
     }
 
-    // Bullet points
     if (line.match(/^[-•*]\s+(.+)/)) {
       if (!inList) { html += '<ul class="list-disc pl-5 mt-1 space-y-1.5">'; inList = true; }
       const content = line.replace(/^[-•*]\s+/, '');
@@ -313,13 +358,11 @@ function renderMarkdown(text) {
       continue;
     }
 
-    // Empty line
     if (line.trim() === '') {
       if (inList) { html += '</ul>'; inList = false; }
       continue;
     }
 
-    // Regular paragraph
     if (inList) { html += '</ul>'; inList = false; }
     html += `<p class="mt-2 text-sm leading-relaxed">${inlineMd(line)}</p>`;
   }
@@ -338,7 +381,6 @@ function inlineMd(text) {
 async function expandContext(btn, context) {
   const contextDiv = btn.nextElementSibling;
 
-  // Toggle off
   if (!contextDiv.classList.contains('hidden')) {
     contextDiv.classList.add('hidden');
     contextDiv.innerHTML = '';
@@ -346,7 +388,6 @@ async function expandContext(btn, context) {
     return;
   }
 
-  // Toggle on — show loading
   contextDiv.classList.remove('hidden');
   contextDiv.innerHTML = '<div class="loading-dots inline-flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-accent animate-dot-bounce"></span><span class="w-1.5 h-1.5 rounded-full bg-accent animate-dot-bounce"></span><span class="w-1.5 h-1.5 rounded-full bg-accent animate-dot-bounce"></span></div>';
   btn.textContent = 'Collapse';
@@ -374,14 +415,14 @@ function toggleChat() {
   if (chatOpen) {
     panel.classList.remove('opacity-0', 'translate-y-5', 'scale-95', 'pointer-events-none');
     panel.classList.add('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
-    fab.classList.add('bg-ink');
-    fab.classList.remove('bg-accent');
+    fab.classList.add('bg-bg-elevated', 'text-accent');
+    fab.classList.remove('bg-accent', 'text-white');
     setTimeout(() => document.getElementById('chatInput').focus(), 350);
   } else {
     panel.classList.add('opacity-0', 'translate-y-5', 'scale-95', 'pointer-events-none');
     panel.classList.remove('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
-    fab.classList.remove('bg-ink');
-    fab.classList.add('bg-accent');
+    fab.classList.remove('bg-bg-elevated', 'text-accent');
+    fab.classList.add('bg-accent', 'text-white');
   }
 }
 
@@ -422,15 +463,14 @@ function addChatMessage(text, type, isHtml = false) {
   div.id = id;
 
   if (type === 'bot') {
-    div.className = 'max-w-[85%] px-4 py-3 rounded-2xl rounded-bl-sm text-sm leading-relaxed bg-white text-ink border border-border-custom self-start';
-    // Render markdown for bot messages
+    div.className = 'max-w-[85%] px-4 py-3 rounded-2xl rounded-bl-sm text-sm leading-relaxed bg-bg-elevated text-text border border-stroke self-start';
     if (isHtml) {
       div.innerHTML = text;
     } else {
       div.innerHTML = renderMarkdown(text);
     }
   } else {
-    div.className = 'max-w-[85%] px-4 py-3 rounded-2xl rounded-br-sm text-sm leading-relaxed bg-accent text-cream self-end';
+    div.className = 'max-w-[85%] px-4 py-3 rounded-2xl rounded-br-sm text-sm leading-relaxed bg-accent text-white self-end';
     div.textContent = text;
   }
 
@@ -460,7 +500,7 @@ async function assessFit() {
   }
   if (result) {
     result.classList.remove('hidden');
-    result.innerHTML = '<div class="loading-dots inline-flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-accent animate-dot-bounce"></span><span class="w-1.5 h-1.5 rounded-full bg-accent animate-dot-bounce"></span><span class="w-1.5 h-1.5 rounded-full bg-accent animate-dot-bounce"></span></div>';
+    result.innerHTML = '<div class="loading-dots inline-flex gap-1"><span class="w-1.5 h-1.5 rounded-full bg-white animate-dot-bounce"></span><span class="w-1.5 h-1.5 rounded-full bg-white animate-dot-bounce"></span><span class="w-1.5 h-1.5 rounded-full bg-white animate-dot-bounce"></span></div>';
     gsap.from(result, { y: 10, opacity: 0, duration: 0.4 });
   }
 
@@ -498,3 +538,37 @@ ${jd}`,
     btn.textContent = 'Assess Fit';
   }
 }
+
+// ====== IMAGE LIGHTBOX ======
+function openLightbox(src, alt) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const caption = document.getElementById('lightboxCaption');
+
+  img.src = src;
+  img.alt = alt || '';
+  caption.textContent = alt || '';
+
+  lb.classList.remove('opacity-0', 'pointer-events-none');
+  img.classList.remove('scale-90');
+  img.classList.add('scale-100');
+}
+
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+
+  lb.classList.add('opacity-0', 'pointer-events-none');
+  img.classList.remove('scale-100');
+  img.classList.add('scale-90');
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('pointer-events-none')) {
+      closeLightbox();
+      e.stopPropagation();
+    }
+  }
+});
