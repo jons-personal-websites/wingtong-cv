@@ -358,8 +358,20 @@ footer:hover svg {
   50% { opacity: 0.8; transform: scale(1.15); }
 }
 
+/* ====== HERO CLIP LINE (preserves descenders) ====== */
+.clip-line {
+  overflow: hidden;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+}
+
 /* ====== HERO BACKGROUND SHAPES ====== */
 .hero-bg-shape {
   filter: blur(60px);
   will-change: transform;
+}
+
+/* ====== HERO CANVAS ====== */
+#heroCanvas {
+  will-change: opacity;
 }

@@ -72,6 +72,117 @@ IMPORTANT GUIDELINES:
 - When expanding on achievements, provide plausible context but note when inferring.
 - Keep answers focused and relevant.`;
 
+// ====== HERO CANVAS BACKGROUND ======
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = rect.width * window.devicePixelRatio;
+    canvas.height = rect.height * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const particles = [];
+  const BLUE = [0, 115, 206];
+  const GOLD = [255, 217, 61];
+  const w = () => canvas.width / window.devicePixelRatio;
+  const h = () => canvas.height / window.devicePixelRatio;
+
+  for (let i = 0; i < 35; i++) {
+    particles.push({
+      x: Math.random() * 1400,
+      y: Math.random() * 900,
+      r: Math.random() * 2.5 + 0.8,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.2,
+      color: Math.random() > 0.7 ? GOLD : BLUE,
+      alpha: Math.random() * 0.15 + 0.05,
+    });
+  }
+
+  // A few larger ring shapes
+  const rings = [];
+  for (let i = 0; i < 4; i++) {
+    rings.push({
+      x: Math.random() * 1400,
+      y: Math.random() * 900,
+      r: Math.random() * 40 + 20,
+      vx: (Math.random() - 0.5) * 0.15,
+      vy: (Math.random() - 0.5) * 0.1,
+      alpha: Math.random() * 0.06 + 0.02,
+      rotation: Math.random() * Math.PI * 2,
+      rotationSpeed: (Math.random() - 0.5) * 0.005,
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w(), h());
+
+    // Draw connection lines between nearby particles
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          const a = (1 - dist / 120) * 0.04;
+          ctx.strokeStyle = `rgba(${BLUE[0]},${BLUE[1]},${BLUE[2]},${a})`;
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw particles
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < -10) p.x = w() + 10;
+      if (p.x > w() + 10) p.x = -10;
+      if (p.y < -10) p.y = h() + 10;
+      if (p.y > h() + 10) p.y = -10;
+      ctx.fillStyle = `rgba(${p.color[0]},${p.color[1]},${p.color[2]},${p.alpha})`;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Draw rings
+    for (const ring of rings) {
+      ring.x += ring.vx;
+      ring.y += ring.vy;
+      ring.rotation += ring.rotationSpeed;
+      if (ring.x < -60) ring.x = w() + 60;
+      if (ring.x > w() + 60) ring.x = -60;
+      if (ring.y < -60) ring.y = h() + 60;
+      if (ring.y > h() + 60) ring.y = -60;
+      ctx.save();
+      ctx.translate(ring.x, ring.y);
+      ctx.rotate(ring.rotation);
+      ctx.strokeStyle = `rgba(${BLUE[0]},${BLUE[1]},${BLUE[2]},${ring.alpha})`;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(0, 0, ring.r, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  // Fade canvas in after a short delay
+  gsap.to(canvas, { opacity: 1, duration: 2, delay: 0.5 });
+})();
+
 // ====== GSAP ANIMATIONS ======
 gsap.registerPlugin(ScrollTrigger);
 
