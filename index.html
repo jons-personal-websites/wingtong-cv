@@ -199,6 +199,307 @@
     </div>
   </section>
 
+  <!-- ==================== PORTFOLIO ==================== -->
+  <section id="portfolio" class="py-24 px-8 max-w-[1200px] mx-auto">
+    <div class="gsap-reveal">
+      <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3">Portfolio</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-ink mb-4">Selected work</h2>
+      <p class="text-base text-muted max-w-xl leading-relaxed mb-10">Click any project to explore the full case study.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('dashboard')">
+        <div class="h-2 bg-[#E17055]"></div>
+        <div class="p-6">
+          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">POS Management Dashboard</h3>
+          <p class="text-sm text-muted leading-relaxed mb-4">Redesigning the management experience for multi-location restaurants</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#E17055]/[0.08] text-[#E17055] border border-[#E17055]/20">Designer &amp; Product Manager</span>
+        </div>
+      </div>
+
+      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('pos')">
+        <div class="h-2 bg-[#6C5CE7]"></div>
+        <div class="p-6">
+          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">POS Checkout App</h3>
+          <p class="text-sm text-muted leading-relaxed mb-4">Optimising the checkout process for quick service restaurants</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#6C5CE7]/[0.08] text-[#6C5CE7] border border-[#6C5CE7]/20">Sole Designer</span>
+        </div>
+      </div>
+
+      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('accountancy')">
+        <div class="h-2 bg-[#0984E3]"></div>
+        <div class="p-6">
+          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">ISCA Course Platform</h3>
+          <p class="text-sm text-muted leading-relaxed mb-4">Helping accountants upskill with courses and events</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#0984E3]/[0.08] text-[#0984E3] border border-[#0984E3]/20">Experience &amp; Interface Designer</span>
+        </div>
+      </div>
+
+      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('biz360')">
+        <div class="h-2 bg-[#00B894]"></div>
+        <div class="p-6">
+          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">Biz360</h3>
+          <p class="text-sm text-muted leading-relaxed mb-4">Guiding entrepreneurs to start businesses in Singapore</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#00B894]/[0.08] text-[#00B894] border border-[#00B894]/20">Designer</span>
+        </div>
+      </div>
+
+      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('gateway')">
+        <div class="h-2 bg-[#FDCB6E]"></div>
+        <div class="p-6">
+          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">Gateway &amp; Catering</h3>
+          <p class="text-sm text-muted leading-relaxed mb-4">Building an emotional connection for a gateway &amp; catering brand</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#FDCB6E]/[0.08] text-[#9A7B2D] border border-[#FDCB6E]/20">Lead Designer</span>
+        </div>
+      </div>
+
+      <div class="gsap-reveal bg-white border border-border-custom rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group" onclick="openProject('scs')">
+        <div class="h-2 bg-[#E84393]"></div>
+        <div class="p-6">
+          <h3 class="font-display text-xl mb-2 group-hover:text-accent transition-colors">Science Centre Singapore</h3>
+          <p class="text-sm text-muted leading-relaxed mb-4">Making trip planning to Science Centre a breeze</p>
+          <span class="inline-block px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-[#E84393]/[0.08] text-[#E84393] border border-[#E84393]/20">Interface Designer</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PROJECT MODAL ==================== -->
+  <div id="projectModal" class="fixed inset-0 z-[2000] bg-ink/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" onclick="if(event.target===this)closeProject()">
+    <div id="projectModalContent" class="absolute inset-0 sm:inset-4 lg:inset-8 bg-cream rounded-none sm:rounded-2xl overflow-y-auto translate-y-8 transition-all duration-400" style="transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);">
+      <button onclick="closeProject()" class="sticky top-4 float-right m-4 mr-6 z-10 w-10 h-10 rounded-full bg-white border border-border-custom flex items-center justify-center text-ink-light hover:bg-ink hover:text-cream transition-all duration-300 cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="projectModalBody" class="max-w-[900px] mx-auto px-6 sm:px-10 py-12 clear-both"></div>
+    </div>
+  </div>
+
+  <!-- ==================== CASE STUDY TEMPLATES ==================== -->
+
+  <div id="project-dashboard" class="hidden">
+    <div class="h-1 w-20 bg-[#E17055] rounded-full mb-8"></div>
+    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#E17055] mb-3">Case Study</p>
+    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Redesigning the POS management experience for multi-location restaurants</h2>
+    <p class="text-sm text-muted mb-8">Designer &amp; Product Manager &middot; F&amp;B Technology</p>
+
+    <div class="prose max-w-none">
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A central POS management dashboard web app enabling IT executives to update menu and point-of-sale configurations across multiple restaurant locations. The client operates 20 quick-service restaurant chains in Singapore.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Inefficient Menu Updates:</strong> Required multiple steps to update menu data per outlet per product. When price adjustments affected multiple locations, executives updated each outlet individually. CSV imports required separate files per category per outlet.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Inflexible Update Timing:</strong> Any action on the dashboard took immediate effect, forcing updates only before business hours or at midnight.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Offline Accessibility Issues:</strong> Web-based system became unavailable when cashiers refreshed pages offline, with intermittent internet creating escalations.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Master Categories:</strong> Update product lists across outlets simultaneously instead of one-by-one.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Localised Pricing:</strong> Each product displays its default price with all outlets. Outlets can override the default or hide products. Only overridden outlets are shown.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Manual Sync Control:</strong> Universal Sync Button appears when unsynced POSs exist, with bulk actions for multiple devices.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4">Eliminates CSV imports and reduces menu management effort. Planned metrics: CSAT, time tracking for updates, escalation reduction.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+        <div class="bg-[#E17055]/[0.06] border border-[#E17055]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#E17055] mb-1">0</div>
+          <div class="text-xs text-muted">CSV Imports Needed</div>
+        </div>
+        <div class="bg-[#E17055]/[0.06] border border-[#E17055]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#E17055] mb-1">20</div>
+          <div class="text-xs text-muted">Restaurant Chains Served</div>
+        </div>
+        <div class="bg-[#E17055]/[0.06] border border-[#E17055]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#E17055] mb-1">1x</div>
+          <div class="text-xs text-muted">Single Update for All Outlets</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="project-pos" class="hidden">
+    <div class="h-1 w-20 bg-[#6C5CE7] rounded-full mb-8"></div>
+    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#6C5CE7] mb-3">Case Study</p>
+    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Optimising the checkout process for quick service restaurants</h2>
+    <p class="text-sm text-muted mb-8">Sole Designer &middot; Experience design, visual interface, design system</p>
+
+    <div class="prose max-w-none">
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">An Android POS app for quick service restaurant cashiers to take orders and process payment. Transitioning from cloud-based to a hybrid POS system storing data locally while syncing to the cloud.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Limited Customisation:</strong> Only one product variant could be recorded, preventing multiple modifications like "no chilli".</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Interface Usability:</strong> Quantity stepper located far from cart items and close to clear cart button, causing accidental presses.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Payment Screen Confusion:</strong> Pay, clear, and cancel buttons too close together.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Receipt Discovery:</strong> Cashiers had to key in exact receipt numbers to locate receipts.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Accessibility:</strong> Majority of cashiers had Chinese as native language with limited English literacy. Truncated product names, untranslated errors, small fonts.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Multiple Customisations:</strong> One-page scroll option (fewer taps), optional with defaults.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Simplified Cart Controls:</strong> Quantity stepper relocated to individual cart items, swipe to delete.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Display Labels:</strong> Physical counter numbers on product cards.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Payment Optimization:</strong> Voucher button relocated to payment screen, "exact" button for precise amounts.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Receipt Browsing:</strong> Changed from search to browse mode with daily receipt list.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Design System:</strong> Comprehensive system developed during high-fidelity phases.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+        <div class="bg-[#6C5CE7]/[0.06] border border-[#6C5CE7]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#6C5CE7] mb-1">10%</div>
+          <div class="text-xs text-muted">Decreased Avg Transaction Time</div>
+        </div>
+        <div class="bg-[#6C5CE7]/[0.06] border border-[#6C5CE7]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#6C5CE7] mb-1">20%</div>
+          <div class="text-xs text-muted">Decreased User Error Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="project-accountancy" class="hidden">
+    <div class="h-1 w-20 bg-[#0984E3] rounded-full mb-8"></div>
+    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#0984E3] mb-3">Case Study</p>
+    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Helping accountants upskill with courses</h2>
+    <p class="text-sm text-muted mb-8">Experience &amp; Interface Designer &middot; Institute of Singapore Chartered Accountants</p>
+
+    <div class="prose max-w-none">
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A redesign for the Institute of Singapore Chartered Accountants (ISCA) — Singapore's accountancy body with over 32,000 members. Corporate website redesign and app prototype completed within seven months.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Poor Search Relevance:</strong> Results sorted alphabetically, overwhelming filters, calendar view on separate page.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Poor Wayfinding:</strong> Deep navigation, confusing terminology ("capability development", "CPE training"), excessive weekly inquiries.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Irrelevant Content for Non-Members:</strong> Website tailored to existing members, not prospective accountants.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Lengthy Add-to-Cart Process:</strong> Course-specific declarations plus personal details forms, cumbersome with SSG/SFC funding.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Flattened IA:</strong> Reduced from 7 to 3 layers, renamed ambiguous terminology.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Improved Search:</strong> Based on 15 interviews — top criteria: topic/keyword, date availability, CPE hours. Added calendar view alongside list view.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Persona-Based Segmentation:</strong> Four user types (junior, experienced, students, private). Added persona filter on homepage.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Streamlined Purchase:</strong> Combined date and funding selection, moved declarations to checkout, auto-fill from profile.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+        <div class="bg-[#0984E3]/[0.06] border border-[#0984E3]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#0984E3] mb-1">10%</div>
+          <div class="text-xs text-muted">Reduced Bounce Rate</div>
+        </div>
+        <div class="bg-[#0984E3]/[0.06] border border-[#0984E3]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#0984E3] mb-1">5,000+</div>
+          <div class="text-xs text-muted">App Downloads</div>
+        </div>
+        <div class="bg-[#0984E3]/[0.06] border border-[#0984E3]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#0984E3] mb-1">4/5</div>
+          <div class="text-xs text-muted">Usability Score</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="project-biz360" class="hidden">
+    <div class="h-1 w-20 bg-[#00B894] rounded-full mb-8"></div>
+    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#00B894] mb-3">Case Study</p>
+    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Guiding entrepreneurs to start businesses</h2>
+    <p class="text-sm text-muted mb-8">Designer &middot; Government Digital Services</p>
+
+    <div class="prose max-w-none">
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A portal consolidating government business applications into one unified platform where Singapore business owners can submit and track applications centrally.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Fragmented Government Services:</strong> Business owners had to bounce between government agencies for various applications.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Knowledge Gap:</strong> Novice entrepreneurs lacked business knowledge, risking operational delays from missed prerequisite licenses.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Guided Journey:</strong> Sequential progress tracker guiding users through business tasks toward goals.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Compliance Integration:</strong> Each step provides application forms with compliance requirements, reducing rejection likelihood.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Intuitive Design:</strong> 100% participant comprehension in usability testing.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+        <div class="bg-[#00B894]/[0.06] border border-[#00B894]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#00B894] mb-1">S$500</div>
+          <div class="text-xs text-muted">Reduced Total Fees</div>
+        </div>
+        <div class="bg-[#00B894]/[0.06] border border-[#00B894]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#00B894] mb-1">10-14d</div>
+          <div class="text-xs text-muted">Reduced Turnaround Time</div>
+        </div>
+        <div class="bg-[#00B894]/[0.06] border border-[#00B894]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#00B894] mb-1">547K+</div>
+          <div class="text-xs text-muted">Businesses Adopted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="project-gateway" class="hidden">
+    <div class="h-1 w-20 bg-[#FDCB6E] rounded-full mb-8"></div>
+    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#9A7B2D] mb-3">Case Study</p>
+    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Building an emotional connection for a gateway &amp; catering brand</h2>
+    <p class="text-sm text-muted mb-8">Lead Designer &middot; Team of 7, 7-month project</p>
+
+    <div class="prose max-w-none">
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A corporate website redesign for an aviation, healthcare, and hospitality services company operating across 55+ locations.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Scalability Issues:</strong> Existing site couldn't scale with hypergrowth.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Brand Communication Gap:</strong> Needed to communicate expansion into gateway and catering services.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Poor Navigation:</strong> Navigation for services and global contacts was poor.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">People-First Storytelling:</strong> Foregrounded staff through authentic articles, videos, photos, and emotional messaging.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Simplified Service Architecture:</strong> Tested two-way filter (business needs x industry sectors) but found it introduced friction. Reverted to straightforward two-category structure for 60+ services.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+        <div class="bg-[#FDCB6E]/[0.06] border border-[#FDCB6E]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#9A7B2D] mb-1">78%</div>
+          <div class="text-xs text-muted">Increased Website Visits</div>
+        </div>
+        <div class="bg-[#FDCB6E]/[0.06] border border-[#FDCB6E]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#9A7B2D] mb-1">55+</div>
+          <div class="text-xs text-muted">Global Locations Served</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="project-scs" class="hidden">
+    <div class="h-1 w-20 bg-[#E84393] rounded-full mb-8"></div>
+    <p class="text-xs font-semibold tracking-[0.15em] uppercase text-[#E84393] mb-3">Case Study</p>
+    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal text-ink mb-3">Making trip planning to Science Centre a breeze</h2>
+    <p class="text-sm text-muted mb-8">Interface Designer &middot; Team with lead designer, PM, researcher, 3 developers</p>
+
+    <div class="prose max-w-none">
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Overview</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6">A scientific institution corporate website redesign expanding the target audience from parents to young adults, over a 6-month period.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Problem</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Information Overload:</strong> Content-heavy site made finding key exhibition info difficult. Some exhibits required advanced science literacy unsuitable for young children.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Outdated Visual Identity:</strong> Target audience shifted to include young adults, but design still targeted children.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">The Solution</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Itinerary Planner:</strong> Smart generator creating personalized itineraries based on visit duration, children's ages, and interests.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4"><strong class="text-ink">Interactive Map:</strong> SVG-based 2D map with exhibition pins for building navigation.</p>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-6"><strong class="text-ink">Visual Rebrand:</strong> Retained orange, introduced dark blue, refined typography, immersive photography for young adults.</p>
+
+      <h3 class="font-display text-xl text-ink mt-8 mb-3">Outcomes</h3>
+      <p class="text-[0.95rem] text-ink-light leading-relaxed mb-4">Improved visit planning efficiency across all audience segments.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+        <div class="bg-[#E84393]/[0.06] border border-[#E84393]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-2xl text-[#E84393] mb-1">STEVIE</div>
+          <div class="text-xs text-muted">2018 Best UX Award</div>
+        </div>
+        <div class="bg-[#E84393]/[0.06] border border-[#E84393]/15 rounded-xl p-5 text-center">
+          <div class="font-display text-3xl text-[#E84393] mb-1">6mo</div>
+          <div class="text-xs text-muted">Project Duration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ==================== SCRIPTS ==================== -->
   <script src="js/main.js"></script>
 </body>
