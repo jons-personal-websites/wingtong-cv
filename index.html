@@ -51,7 +51,7 @@
         </li>
       </ul>
 
-      <button id="hamburger" onclick="toggleMobileNav()" class="flex md:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1">
+      <button id="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation menu" class="flex md:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1">
         <span class="block w-6 h-0.5 bg-ink rounded transition-all duration-300"></span>
         <span class="block w-6 h-0.5 bg-ink rounded transition-all duration-300"></span>
         <span class="block w-6 h-0.5 bg-ink rounded transition-all duration-300"></span>
@@ -267,9 +267,9 @@
   </section>
 
   <!-- ==================== PROJECT MODAL ==================== -->
-  <div id="projectModal" class="fixed inset-0 z-[2000] bg-ink/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" onclick="if(event.target===this)closeProject()">
+  <div id="projectModal" class="fixed inset-0 z-[2000] bg-ink/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-label="Project case study" onclick="if(event.target===this)closeProject()">
     <div id="projectModalContent" class="absolute inset-0 sm:inset-4 lg:inset-8 bg-cream rounded-none sm:rounded-2xl overflow-y-auto translate-y-8 transition-all duration-400" style="transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);">
-      <button onclick="closeProject()" class="sticky top-4 float-right m-4 mr-6 z-10 w-10 h-10 rounded-full bg-white border border-border-custom flex items-center justify-center text-ink-light hover:bg-ink hover:text-cream transition-all duration-300 cursor-pointer">
+      <button onclick="closeProject()" aria-label="Close" class="sticky top-4 float-right m-4 mr-6 z-10 w-10 h-10 rounded-full bg-white border border-border-custom flex items-center justify-center text-ink-light hover:bg-ink hover:text-cream transition-all duration-300 cursor-pointer">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
       <div id="projectModalBody" class="max-w-[900px] mx-auto px-6 sm:px-10 py-12 clear-both"></div>
@@ -800,15 +800,15 @@
     <i data-lucide="pen-tool" class="w-4 h-4 text-accent"></i>
   </div>
   <p class="text-xs text-muted">Product Designer · Singapore</p>
-  <p class="text-xs text-muted mt-2">Leong Wing Tong &copy; 2025</p>
+  <p class="text-xs text-muted mt-2">Leong Wing Tong &copy; 2026</p>
 </footer>
 
 <!-- ==================== AI CHAT WIDGET ==================== -->
-<button id="chatFab" onclick="toggleChat()" title="Ask me anything" class="fixed bottom-8 right-8 w-[60px] h-[60px] rounded-full bg-accent text-cream border-none cursor-pointer flex items-center justify-center shadow-[0_6px_24px_rgba(0,82,163,0.35)] z-[999] transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_30px_rgba(0,82,163,0.5)]">
+<button id="chatFab" onclick="toggleChat()" title="Ask me anything" aria-label="Open chat" class="fixed bottom-8 right-8 w-[60px] h-[60px] rounded-full bg-accent text-cream border-none cursor-pointer flex items-center justify-center shadow-[0_6px_24px_rgba(0,82,163,0.35)] z-[999] transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_30px_rgba(0,82,163,0.5)]">
   <i data-lucide="message-circle" class="w-6 h-6"></i>
 </button>
 
-<div id="chatPanel" class="fixed bottom-[6.5rem] right-8 w-[400px] max-h-[550px] bg-white rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] z-[998] flex flex-col overflow-hidden opacity-0 translate-y-5 scale-95 pointer-events-none transition-all duration-350 max-md:right-3 max-md:left-3 max-md:w-auto max-md:bottom-[5.5rem] max-md:max-h-[70vh]" style="transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);">
+<div id="chatPanel" role="complementary" aria-label="Chat with Wing Tong" class="fixed bottom-[6.5rem] right-8 w-[400px] max-h-[550px] bg-white rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] z-[998] flex flex-col overflow-hidden opacity-0 translate-y-5 scale-95 pointer-events-none transition-all duration-350 max-md:right-3 max-md:left-3 max-md:w-auto max-md:bottom-[5.5rem] max-md:max-h-[70vh]" style="transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);">
   <div class="px-6 py-5 bg-ink text-cream flex items-center gap-3">
     <div class="w-9 h-9 rounded-full bg-accent/20 flex items-center justify-center">
       <i data-lucide="pen-tool" class="w-4 h-4 text-accent-light"></i>
@@ -832,7 +832,7 @@
   </div>
   <div class="px-4 py-3 border-t border-border-custom flex gap-2 bg-white">
     <input id="chatInput" type="text" placeholder="Ask about my experience..." onkeydown="if(event.key==='Enter')sendChat()" class="flex-1 px-4 py-2.5 border border-border-custom rounded-full font-body text-sm bg-cream text-ink transition-all focus:outline-none focus:border-accent placeholder:text-muted">
-    <button id="chatSend" onclick="sendChat()" class="w-10 h-10 rounded-full bg-accent text-cream border-none cursor-pointer flex items-center justify-center transition-all duration-300 flex-shrink-0 hover:bg-ink disabled:opacity-40 disabled:cursor-not-allowed">
+    <button id="chatSend" onclick="sendChat()" aria-label="Send message" class="w-10 h-10 rounded-full bg-accent text-cream border-none cursor-pointer flex items-center justify-center transition-all duration-300 flex-shrink-0 hover:bg-ink disabled:opacity-40 disabled:cursor-not-allowed">
       <i data-lucide="send" class="w-4 h-4"></i>
     </button>
   </div>
